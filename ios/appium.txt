@@ -1,0 +1,9 @@
+[caps]
+platformName = "ios"
+deviceName = "iPhone 6s"
+platformVersion = "9.3"
+app = "ios/app/DJI.app"
+autoAcceptAlerts = 'false'
+
+[appium_lib]
+require = ["../lib/requires.rb"]

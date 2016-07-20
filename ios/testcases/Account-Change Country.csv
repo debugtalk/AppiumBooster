@@ -1,0 +1,12 @@
+TestcaseName,StepDesc,ControlID,ControlAction,Data,Expected
+Change Country to China,Enter My Account Page,btnMenuMyAccount,click,,uiviewMyAccount
+,Enter System Settings,tablecellMyAccountSystemSettings,click,,txtCountryDistrict
+,Click Country/District,txtCountryDistrict,click,,uiviewSelectCountry
+,Select Country,tablecellSelectCN,click,,txtCountryDistrict&&设置
+,Go Back,btnArrowLeft,click,,uiviewMyAccount
+,,,,,
+Change Country to HK,Enter My Account Page,btnMenuMyAccount,click,,uiviewMyAccount
+,Enter System Settings,tablecellMyAccountSystemSettings,click,,txtCountryDistrict
+,Click Country/District,txtCountryDistrict,click,,uiviewSelectCountry
+,Select Country,tablecellSelectHK,click,,txtCountryDistrict&&Settings
+,Go Back,btnArrowLeft,click,,uiviewMyAccount
