@@ -40,11 +40,9 @@ module Pages
       end
 
       def has_no_control(control_id)
-        begin
-          wait { id control_id }
-          raise "#{control_id} still exsits!"
-        rescue Selenium::WebDriver::Error::TimeOutError => ex
-        end
+        wait { id control_id }
+        raise "#{control_id} still exsits!"
+      rescue Selenium::WebDriver::Error::TimeOutError => ex
       end
 
     end
