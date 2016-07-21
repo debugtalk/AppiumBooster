@@ -57,12 +57,12 @@ def load_csv_testcases(testcase_csv_file_path)
     row_content[1..-1].each_with_index do |cell, index|
       title = titles[index+1]
       next if title.nil?
-      step[titles[index+1]] = cell
+      step[titles[index+1]] = cell.strip unless cell.nil?
     end
 
     step_valid = true
     neccessary_titles.each do |neccessary_title|
-      if step[neccessary_title].nil?
+      if step[neccessary_title].nil? || step[neccessary_title] == ""
         step_valid = false
         break
       end

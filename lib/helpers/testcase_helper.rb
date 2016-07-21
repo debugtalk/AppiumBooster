@@ -4,10 +4,10 @@ require_relative 'csv_helper'
 require_relative 'operation_helper'
 
 
-def exec_testcase_step(control_id, control_action, data)
+def exec_testcase_step(control_id, control_action, data, step_ignore=nil)
   """ execute testcase step.
   """
-  if control_id.nil? or control_id == "N/A"
+  if control_id.nil? or control_id.to_s == "N/A"
     # this type of action do not need control_id, such as 'alert_accept'
     step_action = "#{control_action}"
   elsif control_id == 'inner_screen'
@@ -25,11 +25,11 @@ def exec_testcase_step(control_id, control_action, data)
     eval step_action
   rescue
     # do not fail the testcase if the failed step is an extra step
-    if not step.has_key?('IsExtra')
-      raise
-    elsif not step['IsExtra']
+    unless step_ignore
       raise
     end
+  ensure
+    return step_action
   end
 end
 
@@ -64,27 +64,27 @@ def run_testcase_suite(testcase_suite)
         control_action = step['ControlAction']
         data = step['Data']
         expected = step['Expected']
+        step_ignore = step['Ignore']
 
-        step_action_desc = "#{control_id}.#{control_action}"
-        step_action_desc += " #{data}" unless data.nil?
-        exec_testcase_step(control_id, control_action, data)
+        step_action_desc = exec_testcase_step(control_id, control_action, data, step_ignore)
         step_action_desc += "    ...    ✓"
         puts step_action_desc.green
 
         # check if testcase step executed successfully
-        unless expected.nil?
+        if expected
           step_action_desc = verify_step_expectation(expected)
           step_action_desc += "    ...    ✓"
           puts step_action_desc.green
         end
 
+        step_action_desc = ""
       end
     # rescue Selenium::WebDriver::Error::TimeOutError => ex
     rescue => ex
       step_action_desc += "    ...    ✖"
       puts step_action_desc.red
       puts ex
-      accept_alert
+      alert_accept
     end
     puts "E------ #{testcase['testcase_name']}\n".blue
   end
@@ -95,7 +95,7 @@ def run_all_testcase_suites(testcase_suites)
   Dir.glob(testcase_suites) do |testcase_suite|
     puts "start appium driver ..."
     $driver.start_driver
-    accept_alert
+    alert_accept
     run_testcase_suite(testcase_suite)
     puts "quit appium driver."
     $driver.driver_quit

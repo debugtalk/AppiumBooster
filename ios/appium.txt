@@ -2,8 +2,8 @@
 platformName = "ios"
 deviceName = "iPhone 6s"
 platformVersion = "9.3"
-app = "ios/app/DJI.app"
+app = "/Users/Leo/MyProjects/AppiumBooster/ios/app/DJI.app"
 autoAcceptAlerts = 'false'
 
 [appium_lib]
-require = ["../lib/requires.rb"]
+require_relative = ["../lib/requires.rb"]

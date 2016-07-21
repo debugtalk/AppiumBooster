@@ -1,9 +1,9 @@
 # filename: lib/helpers/operation_helper.rb
 
-def accept_alert
+def alert_accept
   begin
-    puts "accept alert."
     $driver.alert_accept
+    puts "alert accepted!"
   rescue
     puts "no alert found, continue."
   end
