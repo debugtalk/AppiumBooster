@@ -1,7 +1,7 @@
 TestcaseName,StepDesc,ControlID,ControlAction,Data,Expected,Ignore
 Login with valid account,Enter My Account Page,btnMenuMyAccount,click,,uiviewMyAccount,
 ,Enter Login Page,tablecellMyAccountLogin,click,,uiviewLogIn,
-,Input Email Address,txtfieldEmailAddress,type,leo.lee@dji.com,,
+,Input Email Address,txtfieldEmailAddress,type,leo.lee@debugtalk.com,,
 ,Input Password,sectxtfieldPassword,type,123456,,
 ,Login,btnLogin,click,,tablecellMyMessage,
 ,Check if coupon popup window exists,inner_screen,has_control,btnViewMyCoupons,btnClose,Yes

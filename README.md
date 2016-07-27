@@ -43,7 +43,7 @@ step_2: Enter Login Page
 control_element.click    ...    ✓
 uiviewLogIn exsits?    ...    ✓
 step_3: Input Email Address
-control_element.type 'leo.lee@dji.com'    ...    ✓
+control_element.type 'leo.lee@debugtalk.com'    ...    ✓
 step_4: Input Password
 control_element.type '123456'    ...    ✓
 step_5: Login

@@ -3,7 +3,7 @@ Register with unregistered account,Enter My Account Page,btnMenuMyAccount,click,
 ,Enter Login Page,tablecellMyAccountLogin,click,,uiviewLogIn
 ,Enter Register Page,btnRegister,click,,btnAgreeAndGetStarted
 ,Confirm Terms,btnAgreeAndGetStarted,click,,btnTermsOfUse
-,Input Email Address,txtfieldEmailAddress,type,test_register@dji.com,
+,Input Email Address,txtfieldEmailAddress,type,test_register@debugtalk.com,
 ,Input Password,sectxtfieldPassword,type,123456,
 ,Sign Up,btnSignUp,click,,tablecellMyMessage
 ,Check if username displayed correctly,inner_screen,has_control,test_register,
@@ -17,6 +17,6 @@ Register with registered account,Enter My Account Page,btnMenuMyAccount,click,,u
 ,Enter Login Page,tablecellMyAccountLogin,click,,uiviewLogIn
 ,Enter Register Page,btnRegister,click,,btnAgreeAndGetStarted
 ,Confirm Terms,btnAgreeAndGetStarted,click,,btnTermsOfUse
-,Input Email Address,txtfieldEmailAddress,type,test_register@dji.com,
+,Input Email Address,txtfieldEmailAddress,type,test_register@debugtalk.com,
 ,Input Password,sectxtfieldPassword,type,123456,
 ,Sign Up,btnSignUp,click,,Account already exists. Please login or retrieve password.||账号已存在，请登录或找回密码
