@@ -19,7 +19,7 @@ module Pages
       end
 
       def statictext_System_Settings
-        @found_cell = wait { id 'tablecellMyMessage' }
+        @found_cell = wait { id 'tablecellMyAccountSystemSettings' }
         self
       end
 
