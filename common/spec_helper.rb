@@ -8,6 +8,7 @@ def setup_driver
 end
 
 def promote_methods
+  Appium.promote_singleton_appium_methods Pages
   Appium.promote_appium_methods RSpec::Core::ExampleGroup
 end
 
