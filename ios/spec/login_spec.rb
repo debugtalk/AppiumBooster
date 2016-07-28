@@ -4,16 +4,19 @@ require_relative '../../common/requires'
 describe 'Login' do
 
   it 'with valid account' do
-    wait { id('btnMenuMyAccount').click }
-    wait { id 'uiviewMyAccount' }
+    # switch to My Account page
+    my_account.button_My_Account.click
+    inner_screen.has_control 'uiviewMyAccount'
 
-    wait { id('tablecellMyAccountLogin').click }
-    wait { id 'uiviewLogIn' }
+    # enter login page
+    my_account.button_Login.click
+    inner_screen.has_control 'uiviewLogIn'
 
-    wait { id('txtfieldEmailAddress').type 'leo.lee@dji.com' }
-    wait { id('sectxtfieldPassword').type '123321' }
-    wait { id('btnLogin').click }
-    wait { id 'tablecellMyMessage' }
+    # login
+    login.field_Email_Address.type 'leo.lee@dji.com'
+    login.field_Password.type '123321'
+    login.button_Login.click
+    inner_screen.has_control 'tablecellMyMessage'
   end
 
 end
