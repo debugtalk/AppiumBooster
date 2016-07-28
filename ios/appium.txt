@@ -3,3 +3,7 @@ platformName = "ios"
 deviceName = "iPhone 6s"
 platformVersion = "9.3"
 app = "/Users/Leo/MyProjects/AppiumBooster/ios/app/test.app"
+autoAcceptAlerts = 'false'
+
+[appium_lib]
+require_relative = ["../lib/requires.rb"]

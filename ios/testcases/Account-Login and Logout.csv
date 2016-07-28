@@ -1,0 +1,13 @@
+TestcaseName,StepDesc,ControlID,ControlAction,Data,Expected,Ignore
+Login with valid account,Enter My Account Page,btnMenuMyAccount,click,,uiviewMyAccount,
+,Enter Login Page,tablecellMyAccountLogin,click,,uiviewLogIn,
+,Input Email Address,txtfieldEmailAddress,type,leo.lee@debugtalk.com,,
+,Input Password,sectxtfieldPassword,type,123456,,
+,Login,btnLogin,click,,tablecellMyMessage,
+,Check if coupon popup window exists,inner_screen,has_control,btnViewMyCoupons,btnClose,Yes
+,Close coupon popup window,btnClose,click,,!btnClose,Yes
+,,,,,,
+Logout,Enter My Account Page,btnMenuMyAccount,click,,uiviewMyAccount,
+,Enter System Settings,tablecellMyAccountSystemSettings,click,,btnLogout,
+,Click Logout,btnLogout,click,,Do you want to log out?,
+,Confirm logout alert,N/A,alert_accept,,tablecellMyAccountLogin,
