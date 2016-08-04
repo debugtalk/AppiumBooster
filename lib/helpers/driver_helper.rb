@@ -2,16 +2,27 @@
 
 require 'appium_lib'
 
-def setup_driver
-  puts 'initialize appium driver ...'
-  appium_txt = File.join(Dir.pwd, 'ios', 'appium.txt')
-  caps = Appium.load_appium_txt file: appium_txt
-  Appium::Driver.new caps
-end
+class AppiumDriver
 
-def promote_methods
-  Appium.promote_singleton_appium_methods Pages
-end
+  def initialize(app_zip_path=nil)
+    setup_driver(app_zip_path)
+    promote_methods
+  end
 
-$driver = setup_driver
-promote_methods
+  def driver
+    @driver
+  end
+
+  def setup_driver(app_zip_path)
+    puts 'initialize appium driver ...'
+    appium_txt = File.join(Dir.pwd, 'ios', 'appium.txt')
+    caps = Appium.load_appium_txt file: appium_txt
+    caps[:caps][:app] = app_zip_path if app_zip_path
+    @driver = Appium::Driver.new caps
+  end
+
+  def promote_methods
+    Appium.promote_singleton_appium_methods Pages
+  end
+
+end
