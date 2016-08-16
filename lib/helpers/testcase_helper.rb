@@ -66,6 +66,13 @@ def run_testcase_suite(testcase_suite)
         expected = step['Expected']
         step_ignore = step['Ignore']
 
+        # add support for passing ruby expression as data parameter
+        if data
+          data.gsub!(/\$\{(.*?)\}/) do
+            eval($1)
+          end
+        end
+
         step_action_desc = exec_testcase_step(control_id, control_action, data, step_ignore)
         step_action_desc += "    ...    ✓"
         puts step_action_desc.green
