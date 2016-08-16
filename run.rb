@@ -4,7 +4,7 @@ require 'optparse'
 require_relative 'lib/requires'
 
 options = {}
-options[:output_color] = true
+
 OptionParser.new do |opts|
   opts.banner = "Usage: run.rb [options]"
 
@@ -12,6 +12,12 @@ OptionParser.new do |opts|
     options[:app_path] = v
   end
 
+  options[:app_type] = "ios"
+  opts.on("-t APP_TYPE", "--app_type", "Specify app type, ios or android") do |v|
+    options[:app_type] = v.downcase
+  end
+
+  options[:output_color] = true
   opts.on("--disable_output_color", "Disable output color") do
     options[:output_color] = false
   end
@@ -23,5 +29,6 @@ OUTPUT_WITH_COLOR = options[:output_color]
 
 $driver = AppiumDriver.new(app_zip_path).driver
 project_root_path = File.dirname(__FILE__)
-testcase_suites = File.join(project_root_path, 'ios', 'testcases', '*.csv')
+app_type = options[:app_type]
+testcase_suites = File.join(project_root_path, app_type, 'testcases', '*.csv')
 run_all_testcase_suites(testcase_suites)
