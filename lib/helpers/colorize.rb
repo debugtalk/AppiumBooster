@@ -10,6 +10,10 @@ class String
     end
   end
 
+  def black
+    colorize(30)
+  end
+
   def red
     colorize(31)
   end
@@ -26,11 +30,15 @@ class String
     colorize(34)
   end
 
-  def pink
+  def magenta
     colorize(35)
   end
 
-  def light_blue
+  def cyan
     colorize(36)
+  end
+
+  def white
+    colorize(37)
   end
 end
