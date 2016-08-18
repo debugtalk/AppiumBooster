@@ -14,3 +14,6 @@ require_relative 'helpers/colorize'
 
 # require the testcase helper
 require_relative 'helpers/testcase_helper'
+
+# require testcase runner
+require_relative 'runner'

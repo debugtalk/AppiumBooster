@@ -72,15 +72,15 @@ In order to test the same functions above, you can write testcases in tables lik
 
 After the testcases are finished, export to CSV format, and put the csv files under `ios/testcases/` directory.
 
-## run
+## start
 
 Once the testcases are done, you are ready to run automation test on your app.
 
-Run the automation testcases is very easy. You can execute `ruby run.rb -h` in the project root directory to see the usage.
+Run the automation testcases is very easy. You can execute `ruby start.rb -h` in the project root directory to see the usage.
 
 ```
-➜  AppiumBooster git:(master) ✗ ruby run.rb -h
-Usage: run.rb [options]
+➜  AppiumBooster git:(master) ✗ ruby start.rb -h
+Usage: start.rb [options]
     -p, --app_path <value>           Specify app path
     -t, --app_type <value>           Specify app type, ios or android
     -f, --testcase_file <value>      Specify testcase file
@@ -90,7 +90,7 @@ Usage: run.rb [options]
 AppiumBooster will load all the csv test suites and then excute each suite sequentially.
 
 ```
-➜  AppiumBooster git:(master) ✗ ruby run.rb -p "ios/app/test.zip" -f "ios/testcases/Account.yml"
+➜  AppiumBooster git:(master) ✗ ruby start.rb -p "ios/app/test.zip" -f "ios/testcases/Account.yml"
 initialize appium driver ...
 load testcase yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml
 load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/AccountSteps.yml
