@@ -1,0 +1,6 @@
+---
+NearbySteps:
+  enter Nearby page:
+    control_id: btnMenuNearby
+    control_action: click
+    expectation: TaskHomeView

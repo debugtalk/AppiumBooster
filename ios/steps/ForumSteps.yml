@@ -1,0 +1,6 @@
+---
+ForumSteps:
+  enter Forum page:
+    control_id: btnMenuForum
+    control_action: click
+    expectation: 社区
