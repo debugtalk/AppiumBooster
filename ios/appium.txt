@@ -7,3 +7,9 @@ autoAcceptAlerts = 'true'
 
 [appium_lib]
 require_relative = ["../lib/requires.rb"]
+
+[scenario]
+ios_devices = [
+  ['iPhone 4s', '8.4'],
+  ['iPhone 6s', '9.3'],
+]

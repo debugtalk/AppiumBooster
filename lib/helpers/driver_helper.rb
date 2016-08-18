@@ -4,21 +4,20 @@ require 'appium_lib'
 
 class AppiumDriver
 
-  def initialize(app_zip_path=nil)
-    setup_driver(app_zip_path)
-    promote_methods
+  def get_capability(app_type)
+    appium_txt = File.join(Dir.pwd, app_type, 'appium.txt')
+    Appium.load_appium_txt file: appium_txt
   end
 
-  def driver
+  def instance(capability)
+    puts "initialize appium instance with capability: #{capability}"
+    setup_driver(capability)
+    promote_methods
     @driver
   end
 
-  def setup_driver(app_zip_path)
-    puts 'initialize appium driver ...'
-    appium_txt = File.join(Dir.pwd, 'ios', 'appium.txt')
-    caps = Appium.load_appium_txt file: appium_txt
-    caps[:caps][:app] = app_zip_path if app_zip_path
-    @driver = Appium::Driver.new caps
+  def setup_driver(capability)
+    @driver = Appium::Driver.new capability
   end
 
   def promote_methods
