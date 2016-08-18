@@ -1,77 +1,126 @@
 ## AppiumBooster
 
-AppiumBooster helps you to write automation testcases in tables, without writing a snippet of code.
+AppiumBooster helps you to write automation testcases in yaml format or csv tables, without writing a snippet of code.
 
-## write testcases
-
-You can write testcases in any table tools, including MS Excel and iWork Numbers, and even in plain CSV format.
+## write testcases in yaml (recommended)
 
 Take DJI+ Discover's login and logout function as an example.
 
 ![](examples/preview_login_and_logout.png)
 
-In order to test these functions above, you can write testcases in tables like this.
+In order to test these functions above, you can write testcases in yaml format like this.
+
+```yaml
+# ios/testcases/Account.yml
+---
+AccountTestcases:
+  login with valid account:
+    - AccountSteps | enter My Account page
+    - AccountSteps | enter Login page
+    - AccountSteps | input EmailAddress
+    - AccountSteps | input Password
+    - AccountSteps | login
+    - AccountSteps | close coupon popup window(optional)
+
+  logout:
+    - AccountSteps | enter My Account page
+    - SettingsSteps | enter Settings page
+    - AccountSteps | logout
+```
+
+In the testcases, each step is combined with two parts, joined by a separator `|`. The former part indicates step file located in `ios/steps/` directory, and the latter part indicates testcase step name, which is defined in steps yaml files like below.
+
+```yaml
+# ios/steps/AccountSteps.yml
+---
+AccountSteps:
+  enter My Account page:
+    control_id: btnMenuMyAccount
+    control_action: click
+    expectation: tablecellMyAccountSystemSettings
+
+  enter Login page:
+    control_id: tablecellMyAccountLogin
+    control_action: click
+    expectation: btnForgetPassword
+
+  input EmailAddress:
+    control_id: txtfieldEmailAddress
+    control_action: type
+    data: leo.lee@debugtalk.com
+    expectation: sectxtfieldPassword
+
+  input Password:
+    control_id: sectxtfieldPassword
+    control_action: type
+    data: 123456
+    expectation: btnLogin
+
+  login:
+    control_id: btnLogin
+    control_action: click
+    expectation: tablecellMyMessage
+```
+
+## write testcases in tables
+
+You can also write testcases in any table tools, including MS Excel and iWork Numbers, and even in plain CSV format.
+
+In order to test the same functions above, you can write testcases in tables like this.
 
 ![](examples/testcase_login_and_logout.png)
 
 After the testcases are finished, export to CSV format, and put the csv files under `ios/testcases/` directory.
 
-That's all you need to do, and now you are ready to run automation test on your app.
-
 ## run
 
-Run the automation testcases is very easy. Just execute `ruby run.rb` in the project root directory.
+Once the testcases are done, you are ready to run automation test on your app.
 
-```bash
-➜  AppiumBooster git:(master) ✗ ruby run.rb
+Run the automation testcases is very easy. You can execute `ruby run.rb -h` in the project root directory to see the usage.
+
+```
+➜  AppiumBooster git:(master) ✗ ruby run.rb -h
+Usage: run.rb [options]
+    -p, --app_path <value>           Specify app path
+    -t, --app_type <value>           Specify app type, ios or android
+    -f, --testcase_file <value>      Specify testcase file
+        --disable_output_color       Disable output color
 ```
 
 AppiumBooster will load all the csv test suites and then excute each suite sequentially.
 
 ```
-➜  AppiumBooster git:(master) ✗ ruby run.rb
+➜  AppiumBooster git:(master) ✗ ruby run.rb -p "ios/app/test.zip" -f "ios/testcases/Account.yml"
 initialize appium driver ...
+load testcase yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml
+load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/AccountSteps.yml
+load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/SettingsSteps.yml
 start appium driver ...
-alert accepted!
-======= start to run testcase suite: ./ios/testcases/Account-Login and Logout.csv =======
-load csv testcase file: ./ios/testcases/Account-Login and Logout.csv ...
-B------ Start to run testcase: Login with valid account
-step_1: Enter My Account Page
-control_element.click    ...    ✓
-uiviewMyAccount exsits?    ...    ✓
-step_2: Enter Login Page
-control_element.click    ...    ✓
-uiviewLogIn exsits?    ...    ✓
-step_3: Input Email Address
-control_element.type 'leo.lee@debugtalk.com'    ...    ✓
-step_4: Input Password
-control_element.type '123456'    ...    ✓
-step_5: Login
-control_element.click    ...    ✓
-tablecellMyMessage exsits?    ...    ✓
-step_6: Check if coupon popup window exists
-inner_screen.has_control 'btnViewMyCoupons'    ...    ✓
-btnClose exsits?    ...    ✓
-step_7: Close coupon popup window
-control_element.click    ...    ✓
-!btnClose no longer exsits?    ...    ✓
-E------ Login with valid account
 
-B------ Start to run testcase: Logout
-step_1: Enter My Account Page
-control_element.click    ...    ✓
-uiviewMyAccount exsits?    ...    ✓
-step_2: Enter System Settings
-control_element.click    ...    ✓
-btnLogout exsits?    ...    ✓
-step_3: Click Logout
-control_element.click    ...    ✓
-Do you want to log out? exsits?    ...    ✓
-step_4: Confirm logout alert
-alert accepted!
-alert_accept    ...    ✓
-tablecellMyAccountLogin exsits?    ...    ✓
-E------ Logout
+======= start to run testcase suite: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml =======
+B------ Start to run testcase: login with valid account
+step_1: enter My Account page
+btnMenuMyAccount.click     ...    ✓
+step_2: enter Login page
+tablecellMyAccountLogin.click     ...    ✓
+step_3: input EmailAddress
+txtfieldEmailAddress.type leo.lee@debugtalk.com    ...    ✓
+step_4: input Password
+sectxtfieldPassword.type 123456    ...    ✓
+step_5: login
+btnLogin.click     ...    ✓
+step_6: close coupon popup window(optional)
+btnClose.click     ...    ✓
+E------ login with valid account
+
+B------ Start to run testcase: logout
+step_1: enter My Account page
+btnMenuMyAccount.click     ...    ✓
+step_2: enter Settings page
+tablecellMyAccountSystemSettings.click     ...    ✓
+step_3: logout
+btnLogout.click     ...    ✓
+E------ logout
 
 ============ all testcases have been executed. ============
 quit appium driver.

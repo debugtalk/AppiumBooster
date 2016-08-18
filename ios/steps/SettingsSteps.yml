@@ -1,0 +1,30 @@
+---
+SettingsSteps:
+  enter My Account page:
+    control_id: btnMenuMyAccount
+    control_action: click
+    expectation: tablecellMyAccountSystemSettings
+
+  enter Settings page:
+    control_id: tablecellMyAccountSystemSettings
+    control_action: click
+    expectation: txtCountryDistrict
+
+  enter Select Country page:
+    control_id: txtCountryDistrict
+    control_action: click
+    expectation: uiviewSelectCountry
+
+  select China:
+    control_id: tablecellSelectCN
+    control_action: click
+    expectation: txtCountryDistrict&&设置
+
+  select HongKong:
+    control_id: tablecellSelectHK
+    control_action: click
+    expectation: txtCountryDistrict&&Settings
+
+  back to last page:
+    control_id: btnArrowLeft
+    control_action: click

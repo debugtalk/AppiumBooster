@@ -1,0 +1,71 @@
+---
+AccountSteps:
+  enter My Account page:
+    control_id: btnMenuMyAccount
+    control_action: click
+    expectation: tablecellMyAccountSystemSettings
+
+  enter Login page:
+    control_id: tablecellMyAccountLogin
+    control_action: click
+    expectation: btnForgetPassword
+
+  input EmailAddress:
+    control_id: txtfieldEmailAddress
+    control_action: type
+    data: leo.lee@debugtalk.com
+    expectation: sectxtfieldPassword
+
+  input Password:
+    control_id: sectxtfieldPassword
+    control_action: type
+    data: 123456
+    expectation: btnLogin
+
+  login:
+    control_id: btnLogin
+    control_action: click
+    expectation: tablecellMyMessage
+
+  enter Settings page:
+    control_id: tablecellMyAccountSystemSettings
+    control_action: click
+    expectation: txtCountryDistrict
+
+  logout:
+    control_id: btnLogout
+    control_action: click
+    expectation: uiviewMyAccount
+
+  enter Register page:
+    control_id: btnRegister
+    control_action: click
+    expectation: btnSignUp
+
+  confirm Register Terms:
+    control_id: btnAgreeAndGetStarted
+    control_action: click
+    expectation: btnTermsOfUse
+
+  register successfully:
+    control_id: btnSignUp
+    control_action: click
+    expectation: tablecellMyMessage
+
+  register failed:
+    control_id: btnSignUp
+    control_action: click
+    expectation: Account already exists. Please login or retrieve password.||账号已存在，请登录或找回密码
+
+  check if coupon popup window exists(optional):
+    control_id: inner_screen
+    control_action: has_control
+    data: btnViewMyCoupons
+    expectation: btnClose
+    optional: true
+
+  close coupon popup window(optional):
+    control_id: btnClose
+    control_action: click
+    expectation: !btnViewMyCoupons
+    optional: true

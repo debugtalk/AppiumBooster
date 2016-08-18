@@ -1,0 +1,14 @@
+---
+AccountTestcases:
+  login with valid account:
+    - AccountSteps | enter My Account page
+    - AccountSteps | enter Login page
+    - AccountSteps | input EmailAddress
+    - AccountSteps | input Password
+    - AccountSteps | login
+    - AccountSteps | close coupon popup window(optional)
+
+  logout:
+    - AccountSteps | enter My Account page
+    - SettingsSteps | enter Settings page
+    - AccountSteps | logout

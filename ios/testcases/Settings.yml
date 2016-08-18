@@ -1,0 +1,15 @@
+---
+SettingsTestcases:
+  Change Country to China:
+    - SettingsSteps | enter My Account page
+    - SettingsSteps | enter Settings page
+    - SettingsSteps | enter Select Country page
+    - SettingsSteps | select China
+    - SettingsSteps | back to last page
+
+  Change Country to HongKong:
+    - SettingsSteps | enter My Account page
+    - SettingsSteps | enter Settings page
+    - SettingsSteps | enter Select Country page
+    - SettingsSteps | select HongKong
+    - SettingsSteps | back to last page

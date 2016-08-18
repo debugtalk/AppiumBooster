@@ -13,14 +13,14 @@ def load_csv_testcases(testcase_csv_file_path)
           'control_id': 'btnMenuMyAccount',
           'control_action': 'click',
           'data': nil,
-          'expected': 'tablecellSystemSettings'
+          'expectation': 'tablecellMyAccountSystemSettings'
         },
         {
           'step_desc': 'Enter Login Page',
-          'control_id': 'btnMyAccountLogin',
+          'control_id': 'tablecellMyAccountLogin',
           'control_action': 'click',
           'data': nil,
-          'expected': 'btnForgetPassword'
+          'expectation': 'btnForgetPassword'
         },
       ]
     },
