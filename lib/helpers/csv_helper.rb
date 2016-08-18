@@ -26,19 +26,19 @@ def load_csv_testcases(testcase_csv_file_path)
     },
   ]
   """
-  puts "load csv testcase file: #{testcase_csv_file_path} ..."
+  puts "load csv testcase file: #{testcase_csv_file_path} ...".magenta
   # the first line is titles by default
   row_num = 1
   testcases_list = Array.new
   titles = nil
   testcase = nil
-  neccessary_titles = ["StepDesc", "ControlID", "ControlAction"]
+  neccessary_titles = ["step_desc", "control_id", "control_action"]
 
   CSV.foreach(testcase_csv_file_path) do |row_content|
     if row_num == 1
       titles = row_content
       # check whether titles are valid
-      raise if titles[0] != "TestcaseName"
+      raise if titles[0] != "testcase_name"
       neccessary_titles.each do |neccessary_title|
         raise unless titles.include? neccessary_title
       end
