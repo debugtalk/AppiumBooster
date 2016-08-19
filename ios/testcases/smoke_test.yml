@@ -1,5 +1,8 @@
 ---
 SmokeTestTestcases:
+  initialize first startup:
+    - SettingsSteps | agree share location(optional)
+
   Change Country to China:
     - SettingsSteps | enter My Account page
     - SettingsSteps | enter Settings page

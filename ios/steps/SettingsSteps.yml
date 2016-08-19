@@ -28,3 +28,13 @@ SettingsSteps:
   back to last page:
     control_id: btnArrowLeft
     control_action: click
+
+  agree share location(optional):
+    control_id: btnAgreeShareLocation
+    control_action: click
+    optional: true
+
+  disagree share location(optional):
+    control_id: btnDisagreeShareLocation
+    control_action: click
+    optional: true
