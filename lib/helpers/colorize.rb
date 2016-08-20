@@ -3,10 +3,10 @@
 class String
   # colorization
   def colorize(color_code)
-    if OUTPUT_WITH_COLOR
-      "\e[#{color_code}m#{self}\e[0m"
-    else
+    if (defined? OUTPUT_WITH_COLOR) && (not OUTPUT_WITH_COLOR)
       self
+    else
+      "\e[#{color_code}m#{self}\e[0m"
     end
   end
 

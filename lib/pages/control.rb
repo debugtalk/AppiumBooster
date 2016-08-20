@@ -9,7 +9,7 @@ module Pages
       include Pages::Actions
 
       def specify(control_id)
-        @found_cell = wait { id control_id }
+        @found_element = wait { id control_id }
         self
       end
 
