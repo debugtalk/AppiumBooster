@@ -13,7 +13,7 @@ StoreSteps:
   add to cart:
     control_id: btnAddToCart
     control_action: click
-    expectation: btnViewCart
+    expectation: 查看购物车||View the cart
 
   back to Store page from product page:
     control_id: btnArrowLeft
