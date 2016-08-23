@@ -4,18 +4,27 @@ require 'appium_lib'
 
 class AppiumDriver
 
-  def initialize
+  def initialize(options)
     puts "initialize AppiumDriver ...".green
+    @app_type = options[:app_type]
+    @output_folder = options[:output_folder]
     init_env
     init_appium_server
   end
 
   def init_env
     puts "initialize project environment.".green
-    @logs_dir = File.expand_path(File.join(Dir.pwd, "logs"))
-    unless File.exists?(@logs_dir)
-      puts "create logs folder."
-      Dir.mkdir(@logs_dir)
+
+    unless File.exists?(@output_folder)
+      puts "create output folder."
+      Dir.mkdir(@output_folder)
+    end
+
+    time = Time.now.strftime "%Y-%m-%d_%H:%M:%S"
+    @results_dir = File.expand_path(File.join(@output_folder, "#{time}"))
+    unless File.exists?(@results_dir)
+      puts "create results directory."
+      Dir.mkdir(@results_dir)
     end
   end
 
@@ -30,13 +39,12 @@ class AppiumDriver
       end
     end
     puts "start appium server process."
-    time = Time.now.strftime "%Y-%m-%d-%H:%M:%S"
-    system("appium | tee #{@logs_dir}/appium_server_#{time}.log &")
+    system("appium | tee #{@results_dir}/appium_server.log &")
     sleep(10)
   end
 
-  def get_capability(app_type)
-    appium_txt = File.join(Dir.pwd, app_type, 'appium.txt')
+  def get_capability
+    appium_txt = File.join(Dir.pwd, @app_type, 'appium.txt')
     Appium.load_appium_txt file: appium_txt
   end
 

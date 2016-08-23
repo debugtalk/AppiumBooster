@@ -7,8 +7,8 @@ def run_test(options)
 
   config_list = Array.new
 
-  $appium_driver = AppiumDriver.new
-  capability = $appium_driver.get_capability(app_type)
+  $appium_driver = AppiumDriver.new options
+  capability = $appium_driver.get_capability
   capability[:caps][:app] = app_path if app_path
 
   ios_devices = capability.delete(:scenario).delete(:ios_devices)

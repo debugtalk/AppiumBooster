@@ -24,6 +24,11 @@ OptionParser.new do |opts|
     options[:testcase_file] = file
   end
 
+  options[:output_folder] = File.join(Dir.pwd, "results")
+  opts.on("-d <value>", "--output_folder", "Specify output folder") do |v|
+    options[:output_folder] = v
+  end
+
   options[:output_color] = true
   opts.on("--disable_output_color", "Disable output color") do
     options[:output_color] = false
