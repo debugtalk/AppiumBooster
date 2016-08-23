@@ -61,6 +61,7 @@ def run_testcase_suite(testcase_file, testcases_list)
 
         step_action_desc = "#{control_id}.#{control_action} #{data}"
         exec_testcase_step(control_id, control_action, data, step_optional)
+        $appium_driver.screenshot(step_action_desc)
 
         # check if testcase step executed successfully
         if expectation

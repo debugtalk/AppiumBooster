@@ -25,6 +25,8 @@ class AppiumDriver
     unless File.exists?(@results_dir)
       puts "create results directory."
       Dir.mkdir(@results_dir)
+      @screenshots_dir = File.join(@results_dir, "screenshots")
+      Dir.mkdir(@screenshots_dir)
     end
   end
 
@@ -77,6 +79,15 @@ class AppiumDriver
     puts "alert accepted!".green
   rescue
     puts "no alert found, continue."
+  end
+
+  def screenshot(png_file_name)
+    png_file_name = png_file_name.gsub(/\s/, '_')
+    time = Time.now.strftime "%H_%M_%S"
+    png_save_path = File.expand_path(
+      File.join(@screenshots_dir, "#{time}_#{png_file_name}.png")
+    )
+    @driver.screenshot png_save_path
   end
 
 end
