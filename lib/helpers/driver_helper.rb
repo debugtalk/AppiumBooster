@@ -82,7 +82,7 @@ class AppiumDriver
   end
 
   def screenshot(png_file_name)
-    png_file_name = png_file_name.gsub(/\s/, '_')
+    png_file_name = png_file_name.strip.gsub(/\s/, '_')
     time = Time.now.strftime "%H_%M_%S"
     png_save_path = File.expand_path(
       File.join(@screenshots_dir, "#{time}_#{png_file_name}.png")
