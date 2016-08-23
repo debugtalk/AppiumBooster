@@ -5,7 +5,7 @@ platformVersion = "9.3"
 autoAcceptAlerts = 'true'
 
 [appium_lib]
-require_relative = ["../lib/requires.rb"]
+require = ["../lib/requires.rb"]
 
 [scenario]
 ios_devices = [
