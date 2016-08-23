@@ -3,14 +3,32 @@
 module Pages
   module Actions
 
-    def type(text)
-      scrollToDisplay
+    def _type(text)
       wait { @found_element.type text }
     end
 
-    def click
-      scrollToDisplay
+    def type(text)
+      begin
+        _type(text)
+      rescue Selenium::WebDriver::Error::UnknownError => ex
+        puts "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
+        scrollToDisplay
+        _type(text)
+      end
+    end
+
+    def _click
       wait { @found_element.click }
+    end
+
+    def click
+      begin
+        _click
+      rescue Selenium::WebDriver::Error::UnknownError => ex
+        puts "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
+        scrollToDisplay
+        _click
+      end
     end
 
     def tapByCoordinate
