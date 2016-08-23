@@ -2,7 +2,6 @@
 
 require_relative 'csv_helper'
 require_relative 'yaml_helper'
-require_relative 'operation_helper'
 
 
 def exec_testcase_step(control_id, control_action, data, step_optional=nil)
@@ -76,7 +75,7 @@ def run_testcase_suite(testcase_file, testcases_list)
       step_action_desc += "    ...    ✖"
       puts step_action_desc.red
       puts "Exception: #{ex}"
-      # alert_accept
+      # $appium_driver.alert_accept
     end
     puts "E------ #{testcase['testcase_name']}\n".blue
   end
@@ -99,11 +98,9 @@ def run_all_testcase_suites(testcase_files)
     testcase_file = File.expand_path(testcase_file)
     testcases_list = parse_testcase_file(testcase_file)
     next if testcases_list.empty?
-    puts "start appium driver ...".green
-    $driver.start_driver
-    # alert_accept
+    $appium_driver.start_driver
+    # $appium_driver.alert_accept
     run_testcase_suite(testcase_file, testcases_list)
-    puts "quit appium driver.".green
-    $driver.driver_quit
+    $appium_driver.driver_quit
   end
 end

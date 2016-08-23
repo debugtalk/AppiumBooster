@@ -95,7 +95,7 @@ initialize appium driver ...
 load testcase yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml
 load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/AccountSteps.yml
 load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/SettingsSteps.yml
-start appium driver ...
+start appium client driver ...
 
 ======= start to run testcase suite: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml =======
 B------ Start to run testcase: login with valid account
@@ -123,5 +123,5 @@ btnLogout.click     ...    ✓
 E------ logout
 
 ============ all testcases have been executed. ============
-quit appium driver.
+quit appium client driver.
 ```

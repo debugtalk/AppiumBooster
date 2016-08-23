@@ -7,8 +7,8 @@ def run_test(options)
 
   config_list = Array.new
 
-  appium_driver = AppiumDriver.new
-  capability = appium_driver.get_capability(app_type)
+  $appium_driver = AppiumDriver.new
+  capability = $appium_driver.get_capability(app_type)
   capability[:caps][:app] = app_path if app_path
 
   ios_devices = capability.delete(:scenario).delete(:ios_devices)
@@ -22,10 +22,9 @@ def run_test(options)
   config_list.each do |config|
     capability[:caps][:deviceName] = config["deviceName"]
     capability[:caps][:platformVersion] = config["platformVersion"]
-    puts "Run test with device capability: #{capability}"
 
     begin
-      $driver = appium_driver.instance(capability)
+      $appium_driver.init_client_instance(capability)
 
       if File.exists? testcase_file
         testcase_files = testcase_file
