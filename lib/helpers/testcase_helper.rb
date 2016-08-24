@@ -76,7 +76,7 @@ def run_testcase_suite(testcase_file, testcases_list)
       step_action_desc += "    ...    ✖"
       puts step_action_desc.red
       puts "Exception: #{ex}"
-      # $appium_driver.alert_accept
+      $appium_driver.screenshot(step_action_desc, error=true)
     end
     puts "E------ #{testcase['testcase_name']}\n".blue
   end

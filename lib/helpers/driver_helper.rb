@@ -27,6 +27,8 @@ class AppiumDriver
       Dir.mkdir(@results_dir)
       @screenshots_dir = File.join(@results_dir, "screenshots")
       Dir.mkdir(@screenshots_dir)
+      @errors_dir = File.join(@results_dir, "errors")
+      Dir.mkdir(@errors_dir)
     end
   end
 
@@ -81,13 +83,12 @@ class AppiumDriver
     puts "no alert found, continue."
   end
 
-  def screenshot(png_file_name)
+  def screenshot(png_file_name, error=false)
     png_file_name = png_file_name.strip.gsub(/\s/, '_')
     time = Time.now.strftime "%H_%M_%S"
-    png_save_path = File.expand_path(
-      File.join(@screenshots_dir, "#{time}_#{png_file_name}.png")
-    )
-    @driver.screenshot png_save_path
+    png_save_file = "#{time}_#{png_file_name}.png"
+    @driver.screenshot File.join(@screenshots_dir, png_save_file)
+    @driver.screenshot File.join(@errors_dir, png_save_file) if error
   end
 
 end
