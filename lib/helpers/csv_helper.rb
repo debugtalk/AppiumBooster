@@ -26,7 +26,7 @@ def load_csv_testcases(testcase_csv_file_path)
     },
   ]
   """
-  puts "load csv testcase file: #{testcase_csv_file_path} ...".magenta
+  $LOG.info "load csv testcase file: #{testcase_csv_file_path} ...".magenta
   # the first line is titles by default
   row_num = 1
   testcases_list = Array.new

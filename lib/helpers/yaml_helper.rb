@@ -7,9 +7,9 @@ def load_steps_lib
   steps_yaml_files = File.expand_path(File.join(Dir.pwd, 'ios', 'steps', "*.yml"))
   Dir.glob(steps_yaml_files).each do |steps_yaml_file_path|
     next unless steps_yaml_file_path.end_with? "Steps.yml"
-    puts "load steps yaml file: #{steps_yaml_file_path}".cyan
+    $LOG.info "load steps yaml file: #{steps_yaml_file_path}".cyan
     steps = YAML.load_file(steps_yaml_file_path)
-    puts "steps: #{steps}"
+    $LOG.info "steps: #{steps}"
     steps_lib_hash.merge!(steps)
   end
   steps_lib_hash
@@ -39,7 +39,7 @@ def load_yaml_testcases(testcase_yaml_file_path)
     },
   ]
   """
-  puts "load testcase yaml file: #{testcase_yaml_file_path}".magenta
+  $LOG.info "load testcase yaml file: #{testcase_yaml_file_path}".magenta
   steps_lib_hash = load_steps_lib()
   testcases_list = Array.new
   YAML.load_file(testcase_yaml_file_path).each do |_, testcases|

@@ -11,7 +11,7 @@ module Pages
       begin
         _type(text)
       rescue Selenium::WebDriver::Error::UnknownError => ex
-        puts "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
+        $LOG.error "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
         scrollToDisplay
         _type(text)
       end
@@ -25,7 +25,7 @@ module Pages
       begin
         _click
       rescue Selenium::WebDriver::Error::UnknownError => ex
-        puts "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
+        $LOG.error "Selenium::WebDriver::Error::UnknownError: #{ex}".magenta
         scrollToDisplay
         _click
       end
@@ -67,7 +67,7 @@ module Pages
 
     def scroll(direction)
       begin
-        puts "scroll #{direction}"
+        $LOG.info "scroll #{direction}"
         execute_script 'mobile: scroll', direction: direction
       rescue Selenium::WebDriver::Error::JavascriptError
       end
@@ -91,7 +91,7 @@ module Pages
 
     def scrollHorizontally(direction)
       y_rel = @found_element.location_rel.y
-      puts "scroll #{direction} at height #{y_rel}"
+      $LOG.info "scroll #{direction} at height #{y_rel}"
 
       width = window_size.width
       y_loc = @found_element.location.y

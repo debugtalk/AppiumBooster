@@ -1,6 +1,7 @@
 # filename: lib/runner.rb
 
 def run_test(options)
+  initialize_project_environment options
   app_path = options[:app_path]
   app_type = options[:app_type]
   testcase_file = options[:testcase_file]
@@ -35,9 +36,9 @@ def run_test(options)
 
       run_all_testcase_suites(testcase_files)
     rescue => ex
-      puts "Exception occurred: #{ex}".red
+      $LOG.error "#{ex}".red
     ensure
-      puts "\n#{'>'*60}===#{'<'*60}\n".yellow
+      $LOG.info "\n#{'>'*60}===#{'<'*60}\n".yellow
     end
   end
 end

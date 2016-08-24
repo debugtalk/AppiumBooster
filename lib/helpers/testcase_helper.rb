@@ -38,14 +38,14 @@ def verify_step_expectation(expectation)
 end
 
 def run_testcase_suite(testcase_file, testcases_list)
-  puts "======= start to run testcase suite: #{testcase_file} =======".yellow
+  $LOG.info "======= start to run testcase suite: #{testcase_file} =======".yellow
   testcases_list.each do |testcase|
-    puts "B------ Start to run testcase: #{testcase['testcase_name']}".blue
-    puts "testcase: #{testcase}"
+    $LOG.info "B------ Start to run testcase: #{testcase['testcase_name']}".blue
+    $LOG.info "testcase: #{testcase}"
     step_action_desc = ""
     begin
       testcase['steps'].each_with_index do |step, index|
-        puts "step_#{index+1}: #{step['step_desc']}".cyan
+        $LOG.info "step_#{index+1}: #{step['step_desc']}".cyan
         control_id = step['control_id']
         control_action = step['control_action']
         data = step['data']
@@ -68,19 +68,19 @@ def run_testcase_suite(testcase_file, testcases_list)
           raise unless verify_step_expectation(expectation)
         end
         step_action_desc += "    ...    ✓"
-        puts step_action_desc.green
+        $LOG.info step_action_desc.green
 
         step_action_desc = ""
       end
     rescue => ex
       step_action_desc += "    ...    ✖"
-      puts step_action_desc.red
-      puts "Exception: #{ex}"
+      $LOG.error step_action_desc.red
+      $LOG.error "#{ex}".red
       $appium_driver.screenshot(step_action_desc, error=true)
     end
-    puts "E------ #{testcase['testcase_name']}\n".blue
+    $LOG.info "E------ #{testcase['testcase_name']}\n".blue
   end
-  puts "============ all testcases have been executed. ============".yellow
+  $LOG.info "============ all testcases have been executed. ============".yellow
 end
 
 def parse_testcase_file(testcase_file)
