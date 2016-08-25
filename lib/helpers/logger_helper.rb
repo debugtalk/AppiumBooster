@@ -13,3 +13,8 @@ def initialize_logger(log_save_dir)
   end
 
 end
+
+if /\/AppiumBooster\/(ios|android)/ =~ Dir.pwd
+  # make logger compatible with arc tool
+  initialize_logger Dir.pwd
+end
