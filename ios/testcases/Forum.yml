@@ -1,0 +1,4 @@
+---
+ForumTestcases:
+  check Forum module:
+    - ForumSteps | enter Forum page

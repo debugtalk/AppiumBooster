@@ -4,7 +4,7 @@ def run_test(options)
   initialize_project_environment options
   app_path = options[:app_path]
   app_type = options[:app_type]
-  testcase_file = options[:testcase_file]
+  scenario_file = options[:scenario_file]
 
   config_list = Array.new
 
@@ -27,14 +27,14 @@ def run_test(options)
     begin
       $appium_driver.init_client_instance(capability)
 
-      if File.exists? testcase_file
-        testcase_files = testcase_file
+      if File.exists? scenario_file
+        scenario_files = scenario_file
       else
-        testcases_dir = File.join(File.dirname(__FILE__), app_type, 'testcases')
-        testcase_files = File.join(testcases_dir, "#{testcase_file}")
+        testcases_dir = File.join(File.dirname(__FILE__), app_type, 'scenarios')
+        scenario_files = File.join(testcases_dir, "#{scenario_file}")
       end
 
-      run_all_testcase_suites(testcase_files)
+      run_all_test_scenarios(scenario_files)
     rescue => ex
       $LOG.error "#{ex}".red
     ensure

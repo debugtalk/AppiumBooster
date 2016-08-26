@@ -10,16 +10,28 @@ AccountSteps:
     control_action: click
     expectation: btnForgetPassword
 
-  input EmailAddress:
+  input test EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com
+    data: leo.lee@debugtalk.com 
     expectation: sectxtfieldPassword
 
-  input Password:
+  input test Password:
     control_id: sectxtfieldPassword
     control_action: type
-    data: 123456
+    data: 12345678
+    expectation: btnLogin
+
+  input production EmailAddress:
+    control_id: txtfieldEmailAddress
+    control_action: type
+    data: leo.lee@debugtalk.com 
+    expectation: sectxtfieldPassword
+
+  input production Password:
+    control_id: sectxtfieldPassword
+    control_action: type
+    data: 123321
     expectation: btnLogin
 
   login:

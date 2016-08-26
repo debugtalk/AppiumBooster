@@ -1,8 +1,6 @@
 # filename: lib/helpers/testcase_helper.rb
 
-require_relative 'csv_helper'
 require_relative 'yaml_helper'
-
 
 def exec_testcase_step(control_id, control_action, data, step_optional=nil)
   """ execute testcase step.
@@ -37,14 +35,16 @@ def verify_step_expectation(expectation)
   inner_screen.check_elements expectation
 end
 
-def run_testcase_suite(testcase_file, testcases_list)
-  $LOG.info "======= start to run testcase suite: #{testcase_file} =======".yellow
-  testcases_list.each do |testcase|
+def run_test_scenario(scenario_hash)
+  scenario_name = scenario_hash['scenario_name']
+  $LOG.info "======= start to run test scenario: #{scenario_name} =======".yellow
+  testcases_suite = scenario_hash['testcases_suite']
+  testcases_suite.each do |testcase|
     $LOG.info "B------ Start to run testcase: #{testcase['testcase_name']}".blue
     $LOG.info "testcase: #{testcase}"
     step_action_desc = ""
     begin
-      testcase['steps'].each_with_index do |step, index|
+      testcase['testcase_steps'].each_with_index do |step, index|
         $LOG.info "step_#{index+1}: #{step['step_desc']}".cyan
         control_id = step['control_id']
         control_action = step['control_action']
@@ -73,35 +73,35 @@ def run_testcase_suite(testcase_file, testcases_list)
         step_action_desc = ""
       end
     rescue => ex
+      $appium_driver.screenshot(step_action_desc, error=true)
       step_action_desc += "    ...    ✖"
       $LOG.error step_action_desc.red
       $LOG.error "#{ex}".red
-      $appium_driver.screenshot(step_action_desc, error=true)
     end
     $LOG.info "E------ #{testcase['testcase_name']}\n".blue
-  end
+  end # testcases_suite
   $LOG.info "============ all testcases have been executed. ============".yellow
 end
 
-def parse_testcase_file(testcase_file)
-  if testcase_file.end_with? ".csv"
-    testcases_list = load_csv_testcases(testcase_file)
-  elsif testcase_file.end_with? ".yml"
-    testcases_list = load_yaml_testcases(testcase_file)
+def parse_scenario_file(scenario_file)
+  if scenario_file.end_with? ".csv"
+    scenario_hash = load_scenario_csv_file(scenario_file)
+  elsif scenario_file.end_with? ".yml"
+    scenario_hash = load_scenario_yaml_file(scenario_file)
   else
     raise "Only support yaml and csv format!"
   end
-  testcases_list
+  scenario_hash
 end
 
-def run_all_testcase_suites(testcase_files)
-  Dir.glob(testcase_files) do |testcase_file|
-    testcase_file = File.expand_path(testcase_file)
-    testcases_list = parse_testcase_file(testcase_file)
-    next if testcases_list.empty?
+def run_all_test_scenarios(scenario_files)
+  Dir.glob(scenario_files) do |scenario_file|
+    scenario_file = File.expand_path(scenario_file)
+    scenario_hash = parse_scenario_file(scenario_file)
+    next if scenario_hash.empty? || scenario_hash['testcases_suite'].empty?
     $appium_driver.start_driver
     # $appium_driver.alert_accept
-    run_testcase_suite(testcase_file, testcases_list)
+    run_test_scenario(scenario_hash)
     $appium_driver.driver_quit
   end
 end

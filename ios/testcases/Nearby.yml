@@ -1,0 +1,4 @@
+---
+NearbyTestcases:
+  check Nearby module:
+    - NearbySteps | enter Nearby page

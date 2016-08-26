@@ -1,0 +1,898 @@
+[2016-08-26 12:14:53] INFO: project environment initialized.
+[2016-08-26 12:14:53] INFO: initialize AppiumDriver ...
+[2016-08-26 12:14:53] INFO: initialize appium server.
+[2016-08-26 12:14:53] INFO: kill appium server process.
+[2016-08-26 12:14:53] INFO: start appium server process.
+[Appium] Welcome to Appium v1.5.3 (REV a3a6a8381d1fe6f4f4e1fed6d7ce84d30b556143)
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip
+[2016-08-26 12:15:04] INFO: initialize appium client instance with capability: {:caps=>{:platformName=>"ios", :deviceName=>"iPhone 5s", :platformVersion=>"9.3", :autoAcceptAlerts=>"true", :app=>"/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip"}, :appium_lib=>{:require=>["/Users/Leo/MyProjects/AppiumBooster/lib/requires.rb"]}}
+[2016-08-26 12:15:04] INFO: load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Account.yml
+[2016-08-26 12:15:04] INFO: load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Forum.yml
+[2016-08-26 12:15:04] INFO: load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Nearby.yml
+[2016-08-26 12:15:04] INFO: load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Settings.yml
+[2016-08-26 12:15:04] INFO: load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Store.yml
+[2016-08-26 12:15:04] INFO: load testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml
+[2016-08-26 12:15:04] INFO: load testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Forum.yml
+[2016-08-26 12:15:04] INFO: load testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Nearby.yml
+[2016-08-26 12:15:04] INFO: load testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Settings.yml
+[2016-08-26 12:15:04] INFO: load testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Store.yml
+[2016-08-26 12:15:04] INFO: load scenario yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/scenarios/login_and_logout.yml
+[2016-08-26 12:15:04] INFO: start appium client driver ...
+[HTTP] --> POST /wd/hub/session {"desiredCapabilities":{"platformName":"ios","deviceName":"iPhone 5s","platformVersion":"9.3","autoAcceptAlerts":"true","app":"/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip"}}
+[MJSONWP] Calling AppiumDriver.createSession() with args: [{"platformName":"ios","dev...
+[Appium] Creating new IosDriver session
+[Appium] Capabilities:
+[Appium]   platformName: 'ios'
+[Appium]   deviceName: 'iPhone 5s'
+[Appium]   platformVersion: '9.3'
+[Appium]   autoAcceptAlerts: 'true'
+[Appium]   app: '/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip'
+[BaseDriver] Capability 'autoAcceptAlerts' changed from string to boolean. This may cause unexpected behavior
+[BaseDriver] Session created with session id: b75d4afc-f049-4b8d-b87a-1aeb7ac552bf
+[debug] [iOS] Not auto-detecting udid.
+[BaseDriver] Using local app '/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip'
+[debug] [BaseDriver] Copying local zip to tmp dir
+[debug] [BaseDriver] Unzipping /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/2016726-94248-1ckcpq9.t9a0emte29/appium-app.zip
+[debug] [BaseDriver] Testing zip archive: /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/2016726-94248-1ckcpq9.t9a0emte29/appium-app.zip
+[BaseDriver] Unzipped local app to '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/2016726-94248-1ckcpq9.t9a0emte29/BuildProducts/Build/Products/Debug-iphonesimulator/Store.app'
+[debug] [iOS] Removing any remaining instruments sockets
+[debug] [iOS] Cleaned up instruments socket /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock
+[debug] [iOS] Setting Xcode version
+[debug] [iOS] Xcode version set to 7.3.1
+[debug] [iOS] Setting iOS SDK Version
+[debug] [iOS] iOS SDK Version set to 9.3
+[debug] [iOS] Checking whether instruments supports our device string
+[debug] [Instruments] Getting list of devices instruments supports
+[debug] [Instruments] Instruments is at: /Applications/Xcode.app/Contents/Developer/usr/bin/instruments
+[debug] [Instruments] Available devices: Apple TV 1080p tvOS 9.2 (9.2) [AE2F208F-E6F0-4A10-B50B-958E25576BC7] (Simulator),Apple Watch - 38mm watchOS 2.2 (2.2) [5DC074E3-104A-4029-B604-41773B710867] (Simulator),Apple Watch - 42mm watchOS 2.2 (2.2) [43F98BCC-122F-4421-9CE7-547521DFF116] (Simulator),iPad 2 iOS 8.4 (8.4) [D5BC2652-CF08-42F9-91E2-4E2A3BC22F3C] (Simulator),iPad 2 iOS 9.3 (9.3) [2C01A120-6769-4270-9FCE-FC88DA522200] (Simulator),iPad Air 2 iOS 8.4 (8.4) [1462FC6A-7587-4C86-882E-733D4317F737] (Simulator),iPad Air 2 iOS 9.3 (9.3) [0E148B95-DC5E-47EF-A6DB-44B70CE05D01] (Simulator),iPad Air iOS 8.4 (8.4) [8E9D97FC-FDAA-45A3-BBB0-37D3670A317D] (Simulator),iPad Air iOS 9.3 (9.3) [ACF3CE00-B791-416A-86BE-334667CC7B9E] (Simulator),iPad Pro iOS 9.3 (9.3) [DB4AF168-A25B-4E47-A28D-629D5BFBEB84] (Simulator),iPad Retina iOS 8.4 (8.4) [B67316F9-985B-4022-A4B2-B425012149AD] (Simulator),iPad Retina iOS 9.3 (9.3) [C2581B0E-0FFA-4C6C-AF17-D194E8409C09] (Simulator),iPhone 5 iOS 8.4 (8.4) [A18BFA02-8C76-499F-993A-889B488794C1] (Simulator),iPhone 5 iOS 9.3 (9.3) [FA78D98D-C1C4-48CA-80FE-E2CDF89A5EF7] (Simulator),iPhone 5s (9.3) [783A07DA-5E22-4F0A-8529-B2C8D54EAE8D] (Simulator),iPhone 5s iOS 8.4 (8.4) [9A6A7462-5A3F-4DE6-90E1-19810E4ADEB3] (Simulator),iPhone 6 Plus iOS 8.4 (8.4) [DBEED600-7C0A-492C-B06B-9FD45FDDD337] (Simulator),iPhone 6 Plus iOS 9.3 (9.3) [4A340780-38FE-4272-8B5B-134876E97FF5] (Simulator),iPhone 6 iOS 8.4 (8.4) [9F3FC0BE-D503-4EDA-BD28-A3FD2473F79D] (Simulator),iPhone 6 iOS 9.3 (9.3) [18860C57-3789-4AAF-AFA0-4353B7073563] (Simulator),iPhone 6s Plus iOS 9.3 (9.3) [DD7523E5-A362-4570-8053-CE136E720F5C] (Simulator),iPhone 6s iOS 9.3 (9.3) [D0FB0816-F2FA-4D44-BDB6-4EEB6A5D9582] (Simulator)
+[iOSSim] Retrieving device name string for Xcode version 7.3.1
+[debug] [iOSSim] Getting device string from options: {"deviceName":"iPhone 5s","platformVersion":"9.3","forceIphone":false,"forceIpad":false}
+[debug] [iOSSim] Final device string is 'iPhone 5s (9.3)'
+[debug] [iOS] iOS sim UDID is 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[iOSSim] Constructing iOS simulator for Xcode version 7.3.1
+[debug] [iOS] No language specified. Using default strings
+[debug] [iOS] Strings file not found. Looking in 'en.lproj' directory
+[debug] [iOS] Parsed app 'Localizable.strings'
+[debug] [ios-app-utils] Getting bundle ID from app
+[iOS] Extracted bundleID: com.dji.storeplus from app: /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/2016726-94248-1ckcpq9.t9a0emte29/BuildProducts/Build/Products/Debug-iphonesimulator/Store.app
+[debug] [iOS] Creating instruments
+[debug] [UIAuto] Preparing bootstrap code
+[debug] [UIAuto] Dynamic bootstrap dir: /Users/Leo/Library/Application Support/appium/bootstrap
+[debug] [UIAuto] Dynamic env: {"nodePath":"/usr/local/Cellar/node/6.2.1/bin/node","commandProxyClientPath":"/usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js","instrumentsSock":"/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock","interKeyDelay":null,"justLoopInfinitely":false,"autoAcceptAlerts":true,"autoDismissAlerts":false,"sendKeyStrategy":"oneByOne"}
+...bug] [UIAuto] Dynamic bootstrap code: // This file is automatically generated. Do not manually modify!
+[debug] [UIAuto] Dynamic bootstrap path: /Users/Leo/Library/Application Support/appium/bootstrap/bootstrap-2a88028656f3a6a1.js
+[debug] [UIAuto] Reusing dynamic bootstrap: /Users/Leo/Library/Application Support/appium/bootstrap/bootstrap-2a88028656f3a6a1.js
+[debug] [iOS] User specified default device, letting instruments launch it
+[debug] [iOS] Running ios sim reset flow
+[debug] [iOS] Killing the simulator
+[debug] [iOSSim] Killing all iOS Simulators
+[debug] [iOS] Cleaning sim state.
+[debug] [iOSSim] Cleaning app data files for 'Store.app', 'com.dji.storeplus'
+[iOSSim] Attempted to get an app path from a fresh simulator quickly launching the sim to populate its directories
+[debug] [iOSSim] Attempting to launch and quit the simulator, to create directory structure
+[debug] [iOSSim] Will launch with Safari? false
+[iOSSim] Starting simulator with command: open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args -CurrentDeviceUDID 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[iOSSim] Tailing simulator logs until we encounter the string "System app "com.apple.springboard" finished startup"
+[iOSSim] We will time out after 60000ms
+[debug] [iOSSim] Waiting an extra 2000ms for the simulator to really finish booting
+[debug] [iOSSim] Done waiting extra time for simulator
+[iOSSim] Simulator booted in 24228ms
+[debug] [iOSSim] Killing all iOS Simulators
+[debug] [iOSSim] Building bundle path map
+[debug] [iOSSim] Building bundle path map
+[debug] [iOSSim] Could not find app directories to delete. It is probably not installed
+[debug] [iOSSim] Killing any simulator daemons for 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[iOSSim] Cleaning simulator 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[debug] [iOS] Not setting locale
+[debug] [iOS] No iOS / app preferences to set
+[debug] [iOSLog] Starting iOS 9.3 simulator log capture
+[debug] [iOSLog] System log path: /Users/Leo/Library/Logs/CoreSimulator/783A07DA-5E22-4F0A-8529-B2C8D54EAE8D/system.log
+[debug] [iOS] Not pre-launching simulator
+[debug] [iOS] Starting UIAutoClient, and launching Instruments.
+[debug] [UIAuto] Instruments socket server started at /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock
+[debug] [Instruments] Instruments is at: /Applications/Xcode.app/Contents/Developer/usr/bin/instruments
+[debug] [Instruments] Attempting to launch instruments, this is try #1
+[Instruments] Launching instruments
+[debug] [Instruments] Attempting to run app on iPhone 5s (9.3)
+[Instruments] On xcode 7.0+, instruments-without-delay does not work, skipping instruments-without-delay
+[debug] [Instruments] Found Insruments-Without-Delay: /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-instruments/thirdparty/iwd7
+[debug] [Instruments] Spawning instruments with command: '/Applications/Xcode.app/Contents/Developer/usr/bin/instruments -t /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/PlugIns/AutomationInstrument.xrplugin/Contents/Resources/Automation.tracetemplate -D /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/instrumentscli0.trace -w "iPhone 5s (9.3)" /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/2016726-94248-1ckcpq9.t9a0emte29/BuildProducts/Build/Products/Debug-iphonesimulator/Store.app -e UIASCRIPT "/Users/Leo/Library/Application Support/appium/bootstrap/bootstrap-2a88028656f3a6a1.js" -e UIARESULTSPATH /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments'
+[debug] [Instruments] And launch timeouts (in ms): {"global":90000}
+[debug] [Instruments] [INST] Waiting for device to boot...
+[UIAuto] Instruments is ready to receive commands
+[debug] [iOS] Instruments launched. Starting poll loop for new commands.
+[debug] [iOS] Setting bootstrap config keys/values
+[debug] [UIAuto] Socket data received (2 bytes)
+[debug] [UIAuto] Got a result when we were not expecting one! Ignoring it
+[debug] [UIAuto] Sending command to instruments: target = $.target();
+au = $;
+$.isVerbose = true;
+
+[debug] [Instruments] [INST] 2016-08-26 04:16:17 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:17 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:17 +0000 Debug: Running system command #1: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":true}...
+[debug] [UIAuto] Socket data received (27 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":true}
+[debug] [iOS] Setting initial orientation to PORTRAIT
+[debug] [UIAuto] Sending command to instruments: au.setScreenOrientation('PORTRAIT')
+[debug] [Instruments] [INST] 2016-08-26 04:16:18 +0000 Debug: Got new command 1 from instruments: au.setScreenOrientation('PORTRAIT')
+[debug] [Instruments] [INST] 2016-08-26 04:16:18 +0000 Debug: evaluating au.setScreenOrientation('PORTRAIT')
+[debug] [Instruments] [INST] 2016-08-26 04:16:18 +0000 Debug: target.setDeviceOrientation("1")
+[debug] [Instruments] [INST] 2016-08-26 04:16:19 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:19 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:19 +0000 Debug: Running system command #2: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[debug] [iOS] Waiting for app source to contain elements
+[debug] [UIAuto] Sending command to instruments: au.mainApp().getTreeForXML()
+[debug] [Instruments] [INST] 2016-08-26 04:16:20 +0000 Debug: Got new command 2 from instruments: au.mainApp().getTreeForXML()
+[debug] [Instruments] [INST] 2016-08-26 04:16:20 +0000 Debug: evaluating au.mainApp().getTreeForXML()
+[debug] [Instruments] [INST] 2016-08-26 04:16:20 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:20 +0000 Debug: responding with::true,"valid":true,"visible":true,"hint":null,"path":"/0/0","x":0,"y":0,"width":320,"height":568},">":[{"UIAImage":{"@":{"name":"alertNotice","label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/0/0","x":143,"y":168.5,"width":34,"height":34},">":[]}},{"UIAStaticText":{"@":{"name":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","label":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","value":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/0/1","x":60,"y":220.5,"width":200,"height":134},">":[]}},{"UIAButton":{"@":{"name":"btnDisagreeShareLocation","label":"Cancel","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/0/2","x":40,"y":374.5,"width":120,"height":50},">":[]}},{"UIAButton":{"@":{"name":"btnAgreeShareLocation","label":"OK","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/0/3","x":160,"y":374.5,"width":120,"height":50},">":[]}}]}},{"UIAWindow":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1","x":0,"y":0,"width":320,"height":568},">":[{"UIANavigationBar":{"@":{"name":"TaskHomeView","label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0","x":0,"y":20,"width":320,"height":44},">":[{"UIAImage":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/0/0","x":0,"y":0,"width":320,"height":64},">":[{"UIAImage":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/0/0/0","x":0,"y":64,"width":320,"height":0},">":[]}}]}},{"UIAButton":{"@":{"name":"Hotspot","label":"Hotspot","value":1,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0/1","x":18.990623474121094,"y":26.5,"width":61.0546875,"height":31},">":[]}},{"UIAButton":{"@":{"name":"Social","label":"Social","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0/2","x":91.03593444824219,"y":26.5,"width":45.7109375,"height":31},">":[]}},{"UIAButton":{"@":{"name":"Activity","label":"Activity","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0/3","x":147.7375030517578,"y":26.5,"width":57.40625,"height":31},">":[]}},{"UIAButton":{"@":{"name":"Store","label":"Store","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0/4","x":216.13438415527344,"y":26.5,"width":40.875,"height":31},">":[]}},{"UIAButton":{"@":{"name":"Back","label":"Back","value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/0/5","x":8,"y":31.5,"width":21,"height":21},">":[]}},{"UIAButton":{"@":{"name":"task home model map","label":"task home model map","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/0/6","x":274,"y":27,"width":30,"height":30},">":[]}}]}},{"UIACollectionView":{"@":{"name":null,"label":null,"value":"page 1 of 1","dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/1","x":0,"y":64,"width":320,"height":455},">":[]}},{"UIAButton":{"@":{"name":"event add round","label":"event add round","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/2","x":254.5,"y":450.5,"width":46.5,"height":46.5},">":[]}},{"UIATabBar":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3","x":0,"y":519,"width":320,"height":49},">":[{"UIAImage":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/3/0","x":0,"y":518.5,"width":320,"height":0.5},">":[]}},{"UIAImage":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3/1","x":0,"y":519,"width":320,"height":49},">":[]}},{"UIAButton":{"@":{"name":"btnMenuNearby","label":"btnMenuNearby","value":1,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3/2","x":2,"y":520,"width":76,"height":48},">":[]}},{"UIAButton":{"@":{"name":"btnMenuStore","label":"btnMenuStore","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3/3","x":82,"y":520,"width":76,"height":48},">":[]}},{"UIAButton":{"@":{"name":"btnMenuForum","label":"btnMenuForum","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3/4","x":162,"y":520,"width":76,"height":48},">":[]}},{"UIAButton":{"@":{"name":"btnMenuMyAccount","label":"btnMenuMyAccount","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/3/5","x":242,"y":520,"width":76,"height":48},">":[]}}]}},{"UIAWindow":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/4","x":0,"y":0,"width":320,"height":568},">":[{"UIAImage":{"@":{"name":"alertNotice","label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/4/0","x":143,"y":168.5,"width":34,"height":34},">":[]}},{"UIAStaticText":{"@":{"name":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","label":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","value":"By clicking on \"OK\" below, you are agreeing to share your location with the app so that it can display nearby social activities. This app will not share your specific location data with anyone without your permission.","dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/4/1","x":60,"y":220.5,"width":200,"height":134},">":[]}},{"UIAButton":{"@":{"name":"btnDisagreeShareLocation","label":"Cancel","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/4/2","x":40,"y":374.5,"width":120,"height":50},">":[]}},{"UIAButton":{"@":{"name":"btnAgreeShareLocation","label":"OK","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/1/4/3","x":160,"y":374.5,"width":120,"height":50},">":[]}}]}},{"UIAImage":{"@":{"name":"event_add_round","label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/5","x":254.75,"y":450.25,"width":46.5,"height":46.5},">":[{"UIAImage":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/1/5/0","x":278,"y":473.5,"width":0,"height":0},">":[]}}]}}]}},{"UIAWindow":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":false,"hint":null,"path":"/0/2","x":0,"y":0,"width":320,"height":568},">":[]}},{"UIAWindow":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/3","x":0,"y":0,"width":320,"height":568},">":[{"UIAStatusBar":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0/3/0","x":0,"y":0,"width":320,"height":20},">":[{"UIAElement":{"@":{"name":"Swipe down with three fingers to
+[debug] [Instruments] [INST] reveal the notification center., Swipe up with three fingers to reveal the control center, Double-tap to scroll to top","label":null,"value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":"Swipe down with three fingers to reveal the notification center., Swipe up with three fingers to reveal the control center, Double-tap to scroll to top","path":"/0/3/0/0","x":6,"y":0,"width":39,"height":20},">":[]}},{"UIAElement":{"@":{"name":"3 of 3 Wi-Fi bars","label":"3 of 3 Wi-Fi bars","value":"SSID","dom":null,"enabled":true,"valid":true,"visible":true,"hint":"Swipe down with three fingers to reveal the notification center., Swipe up with three fingers to reveal the control center, Double-tap to scroll to top","path":"/0/3/0/1","x":50,"y":0,"width":13,"height":20},">":[]}},{"UIAElement":{"@":{"name":"12:16 PM","label":"12:16 PM","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":"Swipe down with three fingers to reveal the notification center., Swipe up with three fingers to reveal the control center, Double-tap to scroll to top","path":"/0/3/0/2","x":135,"y":0,"width":54,"height":20},">":[]}},{"UIAElement":{"@":{"name":"-100% battery power","label":"-100% battery power","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":"Swipe down with three fingers to reveal the notification center., Swipe up with three fingers to reveal the control center, Double-tap to scroll to top","path":"/0/3/0/3","x":290,"y":0,"width":25,"height":20},">":[]}}]}}]}}]}}}
+[debug] [Instruments] [INST] 2016-08-26 04:16:20 +0000 Debug: Running system command #3: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"UIAApplication":{"@":{"name":"DJI+Discove...
+[debug] [UIAuto] Socket data received (8192 bytes)
+[debug] [UIAuto] Socket data received (1777 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"UIAApplication":{"@":{"name":"DJI+Discover","label":"DJI+Discover","value":null,"dom":null,"enabled":true,"valid":true,"visible":true,"hint":null,"path":"/0","x":0,"y":0,"width":320,"height":568},">":[{"UIAWindow":{"@":{"name":null,"label":null,"value":null,"dom":null,"enabled"
+[Appium] New IosDriver session created successfully, session b75d4afc-f049-4b8d-b87a-1aeb7ac552bf added to master session list
+[MJSONWP] Responding to client with driver.createSession() result: {"webStorageEnabled":false,...
+[HTTP] <-- POST /wd/hub/session 200 75700 ms - 603
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/timeouts/implicit_wait {"ms":0}
+[MJSONWP] Calling AppiumDriver.implicitWait() with args: [0,"b75d4afc-f049-4b8d-b87a...
+[debug] [iOS] Executing iOS command 'implicitWait'
+[debug] [BaseDriver] Set implicit wait to 0ms
+[MJSONWP] Responding to client with driver.implicitWait() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/timeouts/implicit_wait 200 10 ms - 76
+[2016-08-26 12:16:20] INFO: ======= start to run test scenario: Login and Logout =======
+[2016-08-26 12:16:20] INFO: B------ Start to run testcase: initialize first startup
+[2016-08-26 12:16:20] INFO: testcase: {"testcase_name"=>"initialize first startup", "testcase_steps"=>[{"control_id"=>"btnAgreeShareLocation", "control_action"=>"click", "optional"=>true, "step_desc"=>"agree share location(optional)"}]}
+[2016-08-26 12:16:20] INFO: step_1: agree share location(optional)
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnAgreeShareLocation"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnAgreeShareLocatio...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnAgreeShareLocation')
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: Got new command 3 from instruments: au.getElementByAccessibilityId('btnAgreeShareLocation')
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: evaluating au.getElementByAccessibilityId('btnAgreeShareLocation')
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: Lookup returned [object UIAButton] with the name "btnAgreeShareLocation" (id: 0).
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:21 +0000 Debug: Running system command #4: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"0"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"0"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"0"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 903 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/0/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["0","b75d4afc-f049-4b8d-b8...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('0')
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: Got new command 4 from instruments: au.tapById('0')
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: evaluating au.tapById('0')
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: responding with:
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/0/click 200 1338 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:22 +0000 Debug: Running system command #5: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: target.frontMostApp().alert().buttons()[1].tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: Waiting for alert to close...
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: Waiting for alert to close...
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: Got new command 5 from instruments: au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: evaluating au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:24 +0000 Debug: Running system command #6: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: Got new command 6 from instruments: au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: evaluating au.capture('screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276')
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot8a3d57fa-3b6a-4b5d-adb1-8508e2f07276")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:36 +0000 Debug: Running system command #7: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:16:37 +0000 Debug: Got new command 7 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:37 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:37 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:37 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:37 +0000 Debug: Running system command #8: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 14385 ms - 790462
+[2016-08-26 12:16:37] INFO: btnAgreeShareLocation.click     ...    ✓
+[2016-08-26 12:16:37] INFO: E------ initialize first startup
+
+[2016-08-26 12:16:37] INFO: B------ Start to run testcase: login with valid production account
+[2016-08-26 12:16:37] INFO: testcase: {"testcase_name"=>"login with valid production account", "testcase_steps"=>[{"control_id"=>"btnMenuMyAccount", "control_action"=>"click", "expectation"=>"tablecellMyAccountSystemSettings", "step_desc"=>"enter My Account page"}, {"control_id"=>"tablecellMyAccountLogin", "control_action"=>"click", "expectation"=>"btnForgetPassword", "step_desc"=>"enter Login page"}, {"control_id"=>"txtfieldEmailAddress", "control_action"=>"type", "data"=>"leo.lee@debugtalk.com ", "expectation"=>"sectxtfieldPassword", "step_desc"=>"input production EmailAddress"}, {"control_id"=>"sectxtfieldPassword", "control_action"=>"type", "data"=>123321, "expectation"=>"btnLogin", "step_desc"=>"input production Password"}, {"control_id"=>"btnLogin", "control_action"=>"click", "expectation"=>"tablecellMyMessage", "step_desc"=>"login"}, {"control_id"=>"btnClose", "control_action"=>"click", "expectation"=>nil, "optional"=>true, "step_desc"=>"close coupon popup window(optional)"}]}
+[2016-08-26 12:16:37] INFO: step_1: enter My Account page
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnMenuMyAccount"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnMenuMyAccount","b...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: Got new command 8 from instruments: au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: evaluating au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: Lookup returned [object UIAButton] with the name "btnMenuMyAccount" (id: 1).
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:38 +0000 Debug: Running system command #9: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"1"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"1"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"1"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1038 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/1/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["1","b75d4afc-f049-4b8d-b8...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('1')
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: Got new command 9 from instruments: au.tapById('1')
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: evaluating au.tapById('1')
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: responding with:
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/1/click 200 1135 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot019afe5c-3d1b-489b-822c-4dea6ca06c9f.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot019afe5c-3d1b-489b-822c-4dea6ca06c9f')
+[debug] [Instruments] [INST] 2016-08-26 04:16:39 +0000 Debug: Running system command #10: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: Got new command 10 from instruments: au.capture('screenshot019afe5c-3d1b-489b-822c-4dea6ca06c9f')
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: evaluating au.capture('screenshot019afe5c-3d1b-489b-822c-4dea6ca06c9f')
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot019afe5c-3d1b-489b-822c-4dea6ca06c9f")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:40 +0000 Debug: Running system command #11: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:41 +0000 Debug: Got new command 11 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:41 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:41 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:41 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:41 +0000 Debug: Running system command #12: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 2115 ms - 86870
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"tablecellMyAccountSystemSettings"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","tablecellMyAccountSy...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:16:42 +0000 Debug: Got new command 12 from instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:16:42 +0000 Debug: evaluating au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+       2016-08-26 04:16:42 +0000 Debug: evaluation finished
+2016-08-26 04:16:42 +0000 Debug: Lookup returned [object UIATableCell] with the name "tablecellMyAccountSystemSettings" (id: 2).
+2016-08-26 04:16:42 +0000 Debug: responding with:
+2016-08-26 04:16:42 +0000 Debug: Running system command #13: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"2"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"2"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"2"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 973 ms - 87
+[2016-08-26 12:16:42] INFO: btnMenuMyAccount.click     ...    ✓
+[2016-08-26 12:16:42] INFO: step_2: enter Login page
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"tablecellMyAccountLogin"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","tablecellMyAccountLo...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('tablecellMyAccountLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: Got new command 13 from instruments: au.getElementByAccessibilityId('tablecellMyAccountLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: evaluating au.getElementByAccessibilityId('tablecellMyAccountLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: Lookup returned [object UIATableCell] with the name "tablecellMyAccountLogin" (id: 3).
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:43 +0000 Debug: Running system command #14: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"3"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"3"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"3"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1032 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/3/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["3","b75d4afc-f049-4b8d-b8...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('3')
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: Got new command 14 from instruments: au.tapById('3')
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: evaluating au.tapById('3')
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: UIATableCell.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:44 +0000 Debug: Running system command #15: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/3/click 200 1247 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshotda04ac3b-4c84-412e-ad32-0a7c6dc0fb57.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshotda04ac3b-4c84-412e-ad32-0a7c6dc0fb57')
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: Got new command 15 from instruments: au.capture('screenshotda04ac3b-4c84-412e-ad32-0a7c6dc0fb57')
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: evaluating au.capture('screenshotda04ac3b-4c84-412e-ad32-0a7c6dc0fb57')
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshotda04ac3b-4c84-412e-ad32-0a7c6dc0fb57")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:45 +0000 Debug: Running system command #16: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:46 +0000 Debug: Got new command 16 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:46 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:46 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:46 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:46 +0000 Debug: Running system command #17: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 1996 ms - 75738
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnForgetPassword"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnForgetPassword","...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnForgetPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: Got new command 17 from instruments: au.getElementByAccessibilityId('btnForgetPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: evaluating au.getElementByAccessibilityId('btnForgetPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: Lookup returned [object UIAButton] with the name "btnForgetPassword" (id: 4).
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:47 +0000 Debug: Running system command #18: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"4"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"4"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"4"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1006 ms - 87
+[2016-08-26 12:16:47] INFO: tablecellMyAccountLogin.click     ...    ✓
+[2016-08-26 12:16:47] INFO: step_3: input production EmailAddress
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"txtfieldEmailAddress"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","txtfieldEmailAddress...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('txtfieldEmailAddress')
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: Got new command 18 from instruments: au.getElementByAccessibilityId('txtfieldEmailAddress')
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: evaluating au.getElementByAccessibilityId('txtfieldEmailAddress')
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: Lookup returned [object UIATextField] with the name "txtfieldEmailAddress" (id: 5).
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:48 +0000 Debug: Running system command #19: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"5"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"5"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"5"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1064 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/execute {"script":"au.getElement('5').setValue('leo.lee@debugtalk.com ');","args":[]}
+[MJSONWP] Calling AppiumDriver.execute() with args: ["au.getElement('5').setVal...
+[debug] [iOS] Executing iOS command 'execute'
+[debug] [UIAuto] Sending command to instruments: au.getElement('5').setValue('leo.lee@debugtalk.com ');
+[debug] [Instruments] [INST] 2016-08-26 04:16:49 +0000 Debug: Got new command 19 from instruments: au.getElement('5').setValue('leo.lee@debugtalk.com ');
+[debug] [Instruments] [INST] 2016-08-26 04:16:49 +0000 Debug: evaluating au.getElement('5').setValue('leo.lee@debugtalk.com ');
+[debug] [Instruments] [INST] 2016-08-26 04:16:49 +0000 Debug: UIATextField.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:50 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:50 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:50 +0000 Debug: Running system command #20: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.execute() result: ""
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/execute 200 1452 ms - 74
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshota2aa246f-83d8-4196-aa33-a0011aab7699.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshota2aa246f-83d8-4196-aa33-a0011aab7699')
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: Got new command 20 from instruments: au.capture('screenshota2aa246f-83d8-4196-aa33-a0011aab7699')
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: evaluating au.capture('screenshota2aa246f-83d8-4196-aa33-a0011aab7699')
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshota2aa246f-83d8-4196-aa33-a0011aab7699")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:51 +0000 Debug: Running system command #21: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:52 +0000 Debug: Got new command 21 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:52 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:52 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:52 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:52 +0000 Debug: Running system command #22: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 2011 ms - 77078
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"sectxtfieldPassword"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","sectxtfieldPassword"...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: Got new command 22 from instruments: au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: evaluating au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: Lookup returned [object UIASecureTextField] with the name "sectxtfieldPassword" (id: 6).
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:53 +0000 Debug: Running system command #23: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"6"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"6"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"6"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1065 ms - 87
+[2016-08-26 12:16:53] INFO: txtfieldEmailAddress.type leo.lee@debugtalk.com     ...    ✓
+[2016-08-26 12:16:53] INFO: step_4: input production Password
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"sectxtfieldPassword"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","sectxtfieldPassword"...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: Got new command 23 from instruments: au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: evaluating au.getElementByAccessibilityId('sectxtfieldPassword')
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: Lookup returned [object UIASecureTextField] with the name "sectxtfieldPassword" (id: 7).
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:54 +0000 Debug: Running system command #24: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"7"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"7"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"7"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 981 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/execute {"script":"au.getElement('7').setValue('123321');","args":[]}
+[MJSONWP] Calling AppiumDriver.execute() with args: ["au.getElement('7').setVal...
+[debug] [iOS] Executing iOS command 'execute'
+[debug] [UIAuto] Sending command to instruments: au.getElement('7').setValue('123321');
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: Got new command 24 from instruments: au.getElement('7').setValue('123321');
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: evaluating au.getElement('7').setValue('123321');
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: UIASecureTextField.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:55 +0000 Debug: Running system command #25: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.execute() result: ""
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/execute 200 1312 ms - 74
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot3a46e04a-1aa8-47ab-a5f5-7abd09a33e19.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot3a46e04a-1aa8-47ab-a5f5-7abd09a33e19')
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: Got new command 25 from instruments: au.capture('screenshot3a46e04a-1aa8-47ab-a5f5-7abd09a33e19')
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: evaluating au.capture('screenshot3a46e04a-1aa8-47ab-a5f5-7abd09a33e19')
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot3a46e04a-1aa8-47ab-a5f5-7abd09a33e19")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:56 +0000 Debug: Running system command #26: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:57 +0000 Debug: Got new command 26 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:57 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:16:57 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:57 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:57 +0000 Debug: Running system command #27: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 2039 ms - 68874
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnLogin"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnLogin","b75d4afc-...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: Got new command 27 from instruments: au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: evaluating au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: Lookup returned [object UIAButton] with the name "btnLogin" (id: 8).
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:58 +0000 Debug: Running system command #28: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"8"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"8"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"8"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 943 ms - 87
+[2016-08-26 12:16:58] INFO: sectxtfieldPassword.type 123321    ...    ✓
+[2016-08-26 12:16:58] INFO: step_5: login
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnLogin"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnLogin","b75d4afc-...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: Got new command 28 from instruments: au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: evaluating au.getElementByAccessibilityId('btnLogin')
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: Lookup returned [object UIAButton] with the name "btnLogin" (id: 9).
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:16:59 +0000 Debug: Running system command #29: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"9"}}...
+[debug] [UIAuto] Socket data received (38 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"9"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"9"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1080 ms - 87
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/9/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["9","b75d4afc-f049-4b8d-b8...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('9')
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: Got new command 29 from instruments: au.tapById('9')
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: evaluating au.tapById('9')
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:00 +0000 Debug: Running system command #30: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/9/click 200 1228 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: Got new command 30 from instruments: au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: evaluating au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:01 +0000 Debug: Running system command #31: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: Got new command 31 from instruments: au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: evaluating au.capture('screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4')
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot2036c57b-abc1-449d-8373-8675a6a4a2c4")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:12 +0000 Debug: Running system command #32: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [Instruments] [INST] 2016-08-26 04:17:13 +0000 Debug: Got new command 32 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:13 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:13 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:13 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:13 +0000 Debug: Running system command #33: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 13010 ms - 131054
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"tablecellMyMessage"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","tablecellMyMessage",...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('tablecellMyMessage')
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: Got new command 33 from instruments: au.getElementByAccessibilityId('tablecellMyMessage')
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: evaluating au.getElementByAccessibilityId('tablecellMyMessage')
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: Lookup returned [object UIATableCell] with the name "tablecellMyMessage" (id: 10).
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:14 +0000 Debug: Running system command #34: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"10"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"10"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"10"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1076 ms - 88
+[2016-08-26 12:17:15] INFO: btnLogin.click     ...    ✓
+[2016-08-26 12:17:15] INFO: step_6: close coupon popup window(optional)
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnClose"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnClose","b75d4afc-...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnClose')
+[debug] [Instruments] [INST] 2016-08-26 04:17:15 +0000 Debug: Got new command 34 from instruments: au.getElementByAccessibilityId('btnClose')
+[debug] [Instruments] [INST] 2016-08-26 04:17:15 +0000 Debug: evaluating au.getElementByAccessibilityId('btnClose')
+[debug] [Instruments] [INST] 2016-08-26 04:17:16 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:16 +0000 Debug: Lookup returned [object UIAButton] with the name "btnClose" (id: 11).
+[debug] [Instruments] [INST] 2016-08-26 04:17:16 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:16 +0000 Debug: Running system command #35: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"11"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"11"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"11"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1069 ms - 88
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/11/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["11","b75d4afc-f049-4b8d-b...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('11')
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: Got new command 35 from instruments: au.tapById('11')
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: evaluating au.tapById('11')
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:17 +0000 Debug: Running system command #36: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/11/click 200 1076 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot5db4034e-11df-46ae-a35c-ddf0037b8355.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot5db4034e-11df-46ae-a35c-ddf0037b8355')
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: Got new command 36 from instruments: au.capture('screenshot5db4034e-11df-46ae-a35c-ddf0037b8355')
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: evaluating au.capture('screenshot5db4034e-11df-46ae-a35c-ddf0037b8355')
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot5db4034e-11df-46ae-a35c-ddf0037b8355")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:18 +0000 Debug: Running system command #37: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:19 +0000 Debug: Got new command 37 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:19 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:19 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:19 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:19 +0000 Debug: Running system command #38: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 2157 ms - 120658
+[2016-08-26 12:17:19] INFO: btnClose.click     ...    ✓
+[2016-08-26 12:17:19] INFO: E------ login with valid production account
+
+[2016-08-26 12:17:19] INFO: B------ Start to run testcase: logout
+[2016-08-26 12:17:19] INFO: testcase: {"testcase_name"=>"logout", "testcase_steps"=>[{"control_id"=>"btnMenuMyAccount", "control_action"=>"click", "expectation"=>"tablecellMyAccountSystemSettings", "step_desc"=>"enter My Account page"}, {"control_id"=>"tablecellMyAccountSystemSettings", "control_action"=>"click", "expectation"=>"txtCountryDistrict", "step_desc"=>"enter Settings page"}, {"control_id"=>"btnLogout", "control_action"=>"click", "expectation"=>"uiviewMyAccount", "step_desc"=>"logout"}]}
+[2016-08-26 12:17:19] INFO: step_1: enter My Account page
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnMenuMyAccount"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnMenuMyAccount","b...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: Got new command 38 from instruments: au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: evaluating au.getElementByAccessibilityId('btnMenuMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: Lookup returned [object UIAButton] with the name "btnMenuMyAccount" (id: 12).
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:20 +0000 Debug: Running system command #39: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"12"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"12"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"12"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 933 ms - 88
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/12/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["12","b75d4afc-f049-4b8d-b...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('12')
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: Got new command 39 from instruments: au.tapById('12')
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: evaluating au.tapById('12')
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:21 +0000 Debug: Running system command #40: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/12/click 200 1216 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot6b3506ed-61bc-4810-830d-e640bcb89043.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot6b3506ed-61bc-4810-830d-e640bcb89043')
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: Got new command 40 from instruments: au.capture('screenshot6b3506ed-61bc-4810-830d-e640bcb89043')
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: evaluating au.capture('screenshot6b3506ed-61bc-4810-830d-e640bcb89043')
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot6b3506ed-61bc-4810-830d-e640bcb89043")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:22 +0000 Debug: Running system command #41: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:23 +0000 Debug: Got new command 41 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:23 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:23 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:23 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:23 +0000 Debug: Running system command #42: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 2024 ms - 120658
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"tablecellMyAccountSystemSettings"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","tablecellMyAccountSy...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: Got new command 42 from instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: evaluating au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: Lookup returned [object UIATableCell] with the name "tablecellMyAccountSystemSettings" (id: 13).
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:24 +0000 Debug: Running system command #43: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"13"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"13"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"13"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1070 ms - 88
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"tablecellMyAccountSystemSettings"}
+[2016-08-26 12:17:24] INFO: btnMenuMyAccount.click     ...    ✓
+[2016-08-26 12:17:24] INFO: step_2: enter Settings page
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","tablecellMyAccountSy...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: Got new command 43 from instruments: au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: evaluating au.getElementByAccessibilityId('tablecellMyAccountSystemSettings')
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: Lookup returned [object UIATableCell] with the name "tablecellMyAccountSystemSettings" (id: 14).
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:25 +0000 Debug: Running system command #44: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"14"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"14"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"14"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 966 ms - 88
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/14/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["14","b75d4afc-f049-4b8d-b...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('14')
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: Got new command 44 from instruments: au.tapById('14')
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: evaluating au.tapById('14')
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: UIATableCell.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:26 +0000 Debug: Running system command #45: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/14/click 200 1218 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot6fba05ab-d664-45ec-b1f1-8353b6df6727.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot6fba05ab-d664-45ec-b1f1-8353b6df6727')
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: Got new command 45 from instruments: au.capture('screenshot6fba05ab-d664-45ec-b1f1-8353b6df6727')
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: evaluating au.capture('screenshot6fba05ab-d664-45ec-b1f1-8353b6df6727')
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot6fba05ab-d664-45ec-b1f1-8353b6df6727")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:27 +0000 Debug: Running system command #46: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:28 +0000 Debug: Got new command 46 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:28 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:28 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:28 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:28 +0000 Debug: Running system command #47: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 1983 ms - 89926
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"txtCountryDistrict"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","txtCountryDistrict",...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('txtCountryDistrict')
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: Got new command 47 from instruments: au.getElementByAccessibilityId('txtCountryDistrict')
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: evaluating au.getElementByAccessibilityId('txtCountryDistrict')
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: Lookup returned [object UIATableCell] with the name "txtCountryDistrict" (id: 15).
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:29 +0000 Debug: Running system command #48: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"15"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"15"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"15"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1082 ms - 88
+[2016-08-26 12:17:29] INFO: tablecellMyAccountSystemSettings.click     ...    ✓
+[2016-08-26 12:17:29] INFO: step_3: logout
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"btnLogout"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","btnLogout","b75d4afc...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('btnLogout')
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: Got new command 48 from instruments: au.getElementByAccessibilityId('btnLogout')
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: evaluating au.getElementByAccessibilityId('btnLogout')
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: Lookup returned [object UIAButton] with the name "btnLogout" (id: 16).
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:30 +0000 Debug: Running system command #49: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"16"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"16"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"16"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1084 ms - 88
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/16/click {"{}":""}
+[MJSONWP] Calling AppiumDriver.click() with args: ["16","b75d4afc-f049-4b8d-b...
+[debug] [iOS] Executing iOS command 'click'
+[debug] [UIAuto] Sending command to instruments: au.tapById('16')
+[debug] [Instruments] [INST] 2016-08-26 04:17:31 +0000 Debug: Got new command 49 from instruments: au.tapById('16')
+[debug] [Instruments] [INST] 2016-08-26 04:17:31 +0000 Debug: evaluating au.tapById('16')
+[debug] [Instruments] [INST] 2016-08-26 04:17:31 +0000 Debug: UIAButton.tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:32 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:32 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:32 +0000 Debug: Running system command #50: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[MJSONWP] Responding to client with driver.click() result: null
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element/16/click 200 1118 ms - 76
+[HTTP] --> GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot {}
+[MJSONWP] Calling AppiumDriver.getScreenshot() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Executing iOS command 'getScreenshot'
+[debug] [iOS] Taking screenshot: '/var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/Run 1/screenshot5b01f741-dbd2-4a8a-9499-ebda202e7cfd.png'
+[debug] [UIAuto] Sending command to instruments: au.capture('screenshot5b01f741-dbd2-4a8a-9499-ebda202e7cfd')
+[debug] [Instruments] [INST] 2016-08-26 04:17:33 +0000 Debug: target.frontMostApp().alert().buttons()[1].tap()
+[debug] [Instruments] [INST] 2016-08-26 04:17:33 +0000 Debug: Waiting for alert to close...
+[debug] [Instruments] [INST] 2016-08-26 04:17:33 +0000 Debug: Waiting for alert to close...
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: Got new command 50 from instruments: au.capture('screenshot5b01f741-dbd2-4a8a-9499-ebda202e7cfd')
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: evaluating au.capture('screenshot5b01f741-dbd2-4a8a-9499-ebda202e7cfd')
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: target.captureRectOnScreenWithName("{origin:{x:0.00,y:0.00}, size:{height:568.00,width:320.00}}", UIScreen, "screenshot5b01f741-dbd2-4a8a-9499-ebda202e7cfd")
+[debug] [UIAuto] Socket data received (25 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":""}
+[debug] [iOS] Waiting 10000 ms for screenshot to be generated.
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Screenshot captured.
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:34 +0000 Debug: Running system command #51: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":""}...
+[debug] [UIAuto] Sending command to instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:35 +0000 Debug: Got new command 51 from instruments: au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:35 +0000 Debug: evaluating au.getScreenOrientation()
+[debug] [Instruments] [INST] 2016-08-26 04:17:35 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:35 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:35 +0000 Debug: Running system command #52: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":"PORTRAIT"}...
+[debug] [UIAuto] Socket data received (33 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":"PORTRAIT"}
+[MJSONWP] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAAAo...
+[HTTP] <-- GET /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/screenshot 200 3343 ms - 86522
+[HTTP] --> POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element {"using":"id","value":"uiviewMyAccount"}
+[MJSONWP] Calling AppiumDriver.findElement() with args: ["id","uiviewMyAccount","b7...
+[debug] [iOS] Executing iOS command 'findElement'
+[debug] [BaseDriver] Waiting up to 0 ms for condition
+[debug] [UIAuto] Sending command to instruments: au.getElementByAccessibilityId('uiviewMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: Got new command 52 from instruments: au.getElementByAccessibilityId('uiviewMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: evaluating au.getElementByAccessibilityId('uiviewMyAccount')
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: evaluation finished
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: Lookup returned [object UIAElement] with the name "uiviewMyAccount" (id: 17).
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: responding with:
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Debug: Running system command #53: /usr/local/Cellar/node/6.2.1/bin/node /usr/local/lib/node_modules/appium/node_modules/appium-ios-driver/node_modules/appium-uiauto/build/lib/bin/command-proxy-client.js /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/instruments_sock 2,{"status":0,"value":{"ELEMENT":"17"}}...
+[debug] [UIAuto] Socket data received (39 bytes)
+[debug] [UIAuto] Got result from instruments: {"status":0,"value":{"ELEMENT":"17"}}
+[MJSONWP] Responding to client with driver.findElement() result: {"ELEMENT":"17"}
+[HTTP] <-- POST /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf/element 200 1072 ms - 88
+[2016-08-26 12:17:36] INFO: btnLogout.click     ...    ✓
+[2016-08-26 12:17:36] INFO: E------ logout
+
+[2016-08-26 12:17:36] INFO: ============ all testcases have been executed. ============
+[2016-08-26 12:17:36] INFO: quit appium client driver.
+[HTTP] --> DELETE /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf {}
+[MJSONWP] Calling AppiumDriver.deleteSession() with args: ["b75d4afc-f049-4b8d-b87a-1...
+[debug] [iOS] Deleting ios session
+[debug] [UIAuto] Destroying instruments client socket.
+[debug] [UIAuto] Closing socket server.
+[debug] [UIAuto] Instruments socket server was closed
+[debug] [Instruments] Starting shutdown.
+[debug] [Instruments] Sending sigterm to instruments
+[debug] [Instruments] [INST] 2016-08-26 04:17:36 +0000 Stopped: Script was stopped by the user
+[debug] [Instruments] [INST STDERR] 2016-08-26 12:17:36.713 instruments[94460:1982725] Attempting to change event horizon while disengage
+[debug] [Instruments] [INST] Instruments Trace Complete (Duration : 102.526405s; Output : /var/folders/9g/6qjyxv2n55l9s4_414glbk280000gn/T/appium-instruments/instrumentscli0.trace)
+[debug] [Instruments] Instruments exited with code 0
+[debug] [iOSLog] Stopping iOS log capture
+[debug] [iOS] Running ios sim reset flow
+[debug] [iOS] Killing the simulator
+[debug] [iOSSim] Killing all iOS Simulators
+[debug] [iOS] Cleaning sim state.
+[debug] [iOSSim] Cleaning app data files for 'Store.app', 'com.dji.storeplus'
+[debug] [iOSSim] Could not find app directories to delete. It is probably not installed
+[debug] [iOSSim] Killing any simulator daemons for 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[iOSSim] Cleaning simulator 783A07DA-5E22-4F0A-8529-B2C8D54EAE8D
+[Appium] Removing session b75d4afc-f049-4b8d-b87a-1aeb7ac552bf from our master session list
+[debug] [MJSONWP] Received response: null
+[debug] [MJSONWP] But deleting session, so not returning
+[MJSONWP] Responding to client with driver.deleteSession() result: null
+[2016-08-26 12:17:39] INFO:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>===<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[HTTP] <-- DELETE /wd/hub/session/b75d4afc-f049-4b8d-b87a-1aeb7ac552bf 200 3392 ms - 76

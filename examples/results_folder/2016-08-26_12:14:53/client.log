@@ -1,0 +1,56 @@
+[2016-08-26 12:14:53] INFO: [32mproject environment initialized.[0m
+[2016-08-26 12:14:53] INFO: [32minitialize AppiumDriver ...[0m
+[2016-08-26 12:14:53] INFO: [32minitialize appium server.[0m
+[2016-08-26 12:14:53] INFO: kill appium server process.
+[2016-08-26 12:14:53] INFO: start appium server process.
+[2016-08-26 12:15:04] INFO: [32minitialize appium client instance with capability: {:caps=>{:platformName=>"ios", :deviceName=>"iPhone 5s", :platformVersion=>"9.3", :autoAcceptAlerts=>"true", :app=>"/Users/Leo/MyProjects/AppiumBooster/ios/app/Store.app.zip"}, :appium_lib=>{:require=>["/Users/Leo/MyProjects/AppiumBooster/lib/requires.rb"]}}[0m
+[2016-08-26 12:15:04] INFO: [36mload steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Account.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Forum.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Nearby.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Settings.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/Store.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Forum.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Nearby.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Settings.yml[0m
+[2016-08-26 12:15:04] INFO: [36mload testcases yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Store.yml[0m
+[2016-08-26 12:15:04] INFO: [35mload scenario yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/scenarios/login_and_logout.yml[0m
+[2016-08-26 12:15:04] INFO: [32mstart appium client driver ...[0m
+[2016-08-26 12:16:20] INFO: [33m======= start to run test scenario: Login and Logout =======[0m
+[2016-08-26 12:16:20] INFO: [34mB------ Start to run testcase: initialize first startup[0m
+[2016-08-26 12:16:20] INFO: testcase: {"testcase_name"=>"initialize first startup", "testcase_steps"=>[{"control_id"=>"btnAgreeShareLocation", "control_action"=>"click", "optional"=>true, "step_desc"=>"agree share location(optional)"}]}
+[2016-08-26 12:16:20] INFO: [36mstep_1: agree share location(optional)[0m
+[2016-08-26 12:16:37] INFO: [32mbtnAgreeShareLocation.click     ...    ✓[0m
+[2016-08-26 12:16:37] INFO: [34mE------ initialize first startup
+[0m
+[2016-08-26 12:16:37] INFO: [34mB------ Start to run testcase: login with valid production account[0m
+[2016-08-26 12:16:37] INFO: testcase: {"testcase_name"=>"login with valid production account", "testcase_steps"=>[{"control_id"=>"btnMenuMyAccount", "control_action"=>"click", "expectation"=>"tablecellMyAccountSystemSettings", "step_desc"=>"enter My Account page"}, {"control_id"=>"tablecellMyAccountLogin", "control_action"=>"click", "expectation"=>"btnForgetPassword", "step_desc"=>"enter Login page"}, {"control_id"=>"txtfieldEmailAddress", "control_action"=>"type", "data"=>"leo.lee@debugtalk.com ", "expectation"=>"sectxtfieldPassword", "step_desc"=>"input production EmailAddress"}, {"control_id"=>"sectxtfieldPassword", "control_action"=>"type", "data"=>123321, "expectation"=>"btnLogin", "step_desc"=>"input production Password"}, {"control_id"=>"btnLogin", "control_action"=>"click", "expectation"=>"tablecellMyMessage", "step_desc"=>"login"}, {"control_id"=>"btnClose", "control_action"=>"click", "expectation"=>nil, "optional"=>true, "step_desc"=>"close coupon popup window(optional)"}]}
+[2016-08-26 12:16:37] INFO: [36mstep_1: enter My Account page[0m
+[2016-08-26 12:16:42] INFO: [32mbtnMenuMyAccount.click     ...    ✓[0m
+[2016-08-26 12:16:42] INFO: [36mstep_2: enter Login page[0m
+[2016-08-26 12:16:47] INFO: [32mtablecellMyAccountLogin.click     ...    ✓[0m
+[2016-08-26 12:16:47] INFO: [36mstep_3: input production EmailAddress[0m
+[2016-08-26 12:16:53] INFO: [32mtxtfieldEmailAddress.type leo.lee@debugtalk.com     ...    ✓[0m
+[2016-08-26 12:16:53] INFO: [36mstep_4: input production Password[0m
+[2016-08-26 12:16:58] INFO: [32msectxtfieldPassword.type 123321    ...    ✓[0m
+[2016-08-26 12:16:58] INFO: [36mstep_5: login[0m
+[2016-08-26 12:17:15] INFO: [32mbtnLogin.click     ...    ✓[0m
+[2016-08-26 12:17:15] INFO: [36mstep_6: close coupon popup window(optional)[0m
+[2016-08-26 12:17:19] INFO: [32mbtnClose.click     ...    ✓[0m
+[2016-08-26 12:17:19] INFO: [34mE------ login with valid production account
+[0m
+[2016-08-26 12:17:19] INFO: [34mB------ Start to run testcase: logout[0m
+[2016-08-26 12:17:19] INFO: testcase: {"testcase_name"=>"logout", "testcase_steps"=>[{"control_id"=>"btnMenuMyAccount", "control_action"=>"click", "expectation"=>"tablecellMyAccountSystemSettings", "step_desc"=>"enter My Account page"}, {"control_id"=>"tablecellMyAccountSystemSettings", "control_action"=>"click", "expectation"=>"txtCountryDistrict", "step_desc"=>"enter Settings page"}, {"control_id"=>"btnLogout", "control_action"=>"click", "expectation"=>"uiviewMyAccount", "step_desc"=>"logout"}]}
+[2016-08-26 12:17:19] INFO: [36mstep_1: enter My Account page[0m
+[2016-08-26 12:17:24] INFO: [32mbtnMenuMyAccount.click     ...    ✓[0m
+[2016-08-26 12:17:24] INFO: [36mstep_2: enter Settings page[0m
+[2016-08-26 12:17:29] INFO: [32mtablecellMyAccountSystemSettings.click     ...    ✓[0m
+[2016-08-26 12:17:29] INFO: [36mstep_3: logout[0m
+[2016-08-26 12:17:36] INFO: [32mbtnLogout.click     ...    ✓[0m
+[2016-08-26 12:17:36] INFO: [34mE------ logout
+[0m
+[2016-08-26 12:17:36] INFO: [33m============ all testcases have been executed. ============[0m
+[2016-08-26 12:17:36] INFO: [32mquit appium client driver.[0m
+[2016-08-26 12:17:39] INFO: [33m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>===<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[0m

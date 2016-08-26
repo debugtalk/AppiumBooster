@@ -13,7 +13,7 @@ StoreSteps:
   add to cart:
     control_id: btnAddToCart
     control_action: click
-    expectation: 查看购物车||View the cart
+    expectation: btnBuyNow
 
   back to Store page from product page:
     control_id: btnArrowLeft
@@ -26,7 +26,7 @@ StoreSteps:
     expectation: uiviewMyCart
 
   view My Cart page:
-    control_id: btnBuyNow
+    control_id: gotoShopCart
     control_action: click
     expectation: uiviewMyCart
 
@@ -38,4 +38,24 @@ StoreSteps:
   checkout cart when logged in:
     control_id: btnCheckOut
     control_action: click
-    expectation: uiviewLogIn
+    expectation: uiviewMyAddresses
+
+  choose Shenzhen city(optional):
+    control_id: Test_CN_ShenZhen
+    control_action: click
+    optional: true
+
+  choose cash on delivery:
+    control_id: tablecellcash_on_delivery
+    control_action: click
+    expectation: 结算&&tabelcellUseCoupon
+
+  confirm order:
+    control_id: 提交订单
+    control_action: click
+    expectation: 订单已提交
+
+  back to Store page from order page:
+    control_id: tabbar home gray
+    control_action: click
+    expectation: uiviewStore

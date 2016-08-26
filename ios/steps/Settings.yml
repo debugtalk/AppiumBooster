@@ -1,10 +1,5 @@
 ---
 SettingsSteps:
-  enter My Account page:
-    control_id: btnMenuMyAccount
-    control_action: click
-    expectation: tablecellMyAccountSystemSettings
-
   enter Settings page:
     control_id: tablecellMyAccountSystemSettings
     control_action: click
@@ -25,6 +20,25 @@ SettingsSteps:
     control_action: click
     expectation: txtCountryDistrict&&Settings
 
+  enter ShoppingInfo page:
+    control_id: tablecellShoppingInfo
+    control_action: click
+    expectation: uiviewShoppingInfo
+
+  enter ShippingAddress page:
+    control_id: tablecellShippingAddress
+    control_action: click
+    expectation: uiviewMyAddresses
+
+  switch Shipping Address to China:
+    control_id: Test_CN_Address
+    control_action: click
+
+  confirm Shipping Address selection:
+    control_id: btnConfirm
+    control_action: click
+    expectation: uiviewShoppingInfo
+
   back to last page:
     control_id: btnArrowLeft
     control_action: click
@@ -38,3 +52,8 @@ SettingsSteps:
     control_id: btnDisagreeShareLocation
     control_action: click
     optional: true
+
+  switch to test environment:
+    control_id: switchMyAccountServerEnv
+    control_action: click
+    expectation: 切换后台 (当前测试环境)

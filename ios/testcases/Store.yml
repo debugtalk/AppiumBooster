@@ -1,0 +1,15 @@
+---
+StoreTestcases:
+  add phantom 4 to cart:
+    - StoreSteps | enter Store page
+    - StoreSteps | enter Phantom 4 page
+    - StoreSteps | add to cart
+    - StoreSteps | view My Cart page
+
+  finish order:
+    - StoreSteps | checkout cart when logged in
+    - StoreSteps | choose Shenzhen city(optional)
+    - StoreSteps | confirm My Address(optional)
+    - StoreSteps | choose cash on delivery
+    - StoreSteps | confirm order
+    - StoreSteps | back to Store page from order page

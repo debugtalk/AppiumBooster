@@ -17,11 +17,11 @@ OptionParser.new do |opts|
     options[:app_type] = v.downcase
   end
 
-  options[:testcase_file] = "*.yml"
-  opts.on("-f <value>", "--testcase_file", "Specify testcase file") do |file|
+  options[:scenario_file] = "*.yml"
+  opts.on("-f <value>", "--scenario_file", "Specify testcase file") do |file|
     file.downcase!
     file = "*.yml" if file == "*.yaml"
-    options[:testcase_file] = file
+    options[:scenario_file] = file
   end
 
   options[:output_folder] = File.join(Dir.pwd, "results")
