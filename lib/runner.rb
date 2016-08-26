@@ -17,6 +17,7 @@ def run_test(options)
     config = Hash.new
     config["deviceName"] = device[0]
     config["platformVersion"] = device[1]
+    recreate_ios_simulator device[0], device[1]
     config_list << config
   end
 

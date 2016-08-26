@@ -15,11 +15,14 @@ require_relative 'helpers/driver_helper'
 # require output colorization
 require_relative 'helpers/colorize'
 
-# require the testcase helper
+# require testcase helper
 require_relative 'helpers/testcase_helper'
 
-# require the logger helper
+# require logger helper
 require_relative 'helpers/logger_helper'
+
+# require ios simulator helper
+require_relative 'helpers/simulator_helper'
 
 # require testcase runner
 require_relative 'runner'
