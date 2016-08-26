@@ -14,7 +14,11 @@ OptionParser.new do |opts|
 
   options[:app_type] = "ios"
   opts.on("-t <value>", "--app_type", "Specify app type, ios or android") do |v|
-    options[:app_type] = v.downcase
+    app_type = v.downcase
+    unless ["ios", "android"].include? app_type
+      raise ArgumentError, "app_type should only be ios or android!"
+    end
+    options[:app_type] = app_type
   end
 
   options[:scenario_file] = "*.yml"
@@ -29,6 +33,11 @@ OptionParser.new do |opts|
     options[:output_folder] = v
   end
 
+  options[:convert_type] = "yaml2csv"
+  opts.on("-c <value>", "--convert_type", "Specify testcase converter, yaml2csv or csv2yaml") do |v|
+    options[:convert_type] = v
+  end
+
   options[:output_color] = true
   opts.on("--disable_output_color", "Disable output color") do
     options[:output_color] = false
@@ -36,6 +45,13 @@ OptionParser.new do |opts|
 
 end.parse!
 
+initialize_project_environment options
 OUTPUT_WITH_COLOR = options[:output_color]
 
-run_test(options)
+if options[:app_path] && options[:app_type]
+  run_test(options)
+elsif options[:convert_type] && File.file?(options[:scenario_file])
+  convert_yaml_to_csv(options[:scenario_file]) if options[:convert_type] == "yaml2csv"
+else
+  raise ArgumentError
+end

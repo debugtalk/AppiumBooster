@@ -6,6 +6,6 @@ SmokeTest:
   - AccountTestcases | Change Shipping Address to China
   - StoreTestcases | add phantom 4 to cart
   - StoreTestcases | finish order
-  - NearbySteps | check Nearby module
-  - ForumSteps | check Forum module
+  - NearbyTestcases | check Nearby module
+  - ForumTestcases | check Forum module
   - AccountTestcases | logout
