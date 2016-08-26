@@ -1,6 +1,7 @@
 # filename: lib/helpers/testcase_helper.rb
 
 require_relative 'yaml_helper'
+require_relative 'csv_helper'
 
 def exec_testcase_step(control_id, control_action, data, step_optional=nil)
   """ execute testcase step.
