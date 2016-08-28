@@ -1,6 +1,7 @@
 # filename: lib/helpers/driver_helper.rb
 
 require 'appium_lib'
+require 'fileutils'
 
 class AppiumDriver
 
@@ -9,6 +10,7 @@ class AppiumDriver
     @app_type = options[:app_type]
     @results_dir = options[:results_dir]
     @screenshots_dir = options[:screenshots_dir]
+    @xmls_dir = options[:xmls_dir]
     @errors_dir = options[:errors_dir]
     init_appium_server
   end
@@ -67,9 +69,19 @@ class AppiumDriver
   def screenshot(png_file_name, error=false)
     png_file_name = png_file_name.strip.gsub(/\s/, '_')
     time = Time.now.strftime "%H_%M_%S"
-    png_save_file = "#{time}_#{png_file_name}.png"
-    @driver.screenshot File.join(@screenshots_dir, png_save_file)
-    @driver.screenshot File.join(@errors_dir, png_save_file) if error
+    file_name = "#{time}_#{png_file_name}"
+    screenshot_save_file = File.join(@screenshots_dir, "#{file_name}.png")
+    @driver.screenshot screenshot_save_file
+    FileUtils.cp(screenshot_save_file, @errors_dir) if error
+    xml_save_file = File.join(@xmls_dir, "#{file_name}.dom")
+    dump_xml(xml_save_file, error)
+  end
+
+  def dump_xml(xml_save_file, error=false)
+    open(xml_save_file, 'w') do |f|
+      f.puts @driver.get_source
+    end
+    FileUtils.cp(xml_save_file, @errors_dir) if error
   end
 
 end
