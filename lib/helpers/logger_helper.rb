@@ -3,7 +3,7 @@
 require 'logger'
 
 def initialize_logger(log_save_dir)
-  log_save_path = File.join(log_save_dir, "client.log")
+  log_save_path = File.join(log_save_dir, "appium_booster.log")
   $LOG = Logger.new("| tee #{log_save_path}")
   $LOG.level = Logger::INFO
 
