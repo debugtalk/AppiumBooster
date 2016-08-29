@@ -21,11 +21,11 @@ OptionParser.new do |opts|
     options[:app_type] = app_type
   end
 
-  options[:scenario_file] = "*.yml"
-  opts.on("-f <value>", "--scenario_file", "Specify testcase file") do |file|
+  options[:testcase_file] = "*.yml"
+  opts.on("-f <value>", "--testcase_file", "Specify testcase file") do |file|
     file.downcase!
     file = "*.yml" if file == "*.yaml"
-    options[:scenario_file] = file
+    options[:testcase_file] = file
   end
 
   options[:output_folder] = File.join(Dir.pwd, "results")
@@ -50,8 +50,8 @@ OUTPUT_WITH_COLOR = options[:output_color]
 
 if options[:app_path] && options[:app_type]
   run_test(options)
-elsif options[:convert_type] && File.file?(options[:scenario_file])
-  convert_yaml_to_csv(options[:scenario_file]) if options[:convert_type] == "yaml2csv"
+elsif options[:convert_type] && File.file?(options[:testcase_file])
+  convert_yaml_to_csv(options[:testcase_file]) if options[:convert_type] == "yaml2csv"
 else
   raise ArgumentError
 end

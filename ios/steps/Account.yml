@@ -13,7 +13,7 @@ AccountSteps:
   input test EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com 
+    data: leo.lee@debugtalk.com
     expectation: sectxtfieldPassword
 
   input test Password:
@@ -25,13 +25,13 @@ AccountSteps:
   input production EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com 
+    data: leo.lee@debugtalk.com
     expectation: sectxtfieldPassword
 
   input production Password:
     control_id: sectxtfieldPassword
     control_action: type
-    data: 123321
+    data: 123456
     expectation: btnLogin
 
   login:

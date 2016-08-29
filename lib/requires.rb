@@ -18,7 +18,7 @@ require_relative 'helpers/colorize'
 # require testcase helper
 require_relative 'helpers/testcase_helper'
 
-# require test scenarios converter helper
+# require test testcases converter helper
 require_relative 'helpers/converter_helper'
 
 # require logger helper

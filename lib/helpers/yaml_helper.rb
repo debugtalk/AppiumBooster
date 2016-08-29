@@ -39,10 +39,10 @@ def load_steps_lib
   steps_lib_hash
 end
 
-def load_testcases_lib
-  """ load yaml format testcases library.
-  output testcases_lib_hash format: {
-    'AccountTestcases': {
+def load_features_lib
+  """ load yaml format features library.
+  output features_lib_hash format: {
+    'AccountFeatures': {
       'login with valid account': [
         steps_lib_hash['AccountSteps']['enter My Account page'],
         steps_lib_hash['AccountSteps']['enter Login page'],
@@ -56,7 +56,7 @@ def load_testcases_lib
         steps_lib_hash['AccountSteps']['logout'],
       ]
     },
-    'SettingsTestcases': {
+    'SettingsFeatures': {
       'Change Country to China': [
         steps_lib_hash['SettingsSteps']['enter My Account page'],
         steps_lib_hash['SettingsSteps']['enter Settings page'],
@@ -68,58 +68,58 @@ def load_testcases_lib
   }
   """
   steps_lib_hash = load_steps_lib()
-  testcases_lib_hash = Hash.new
-  testcases_yaml_files = File.expand_path(File.join(Dir.pwd, 'ios', 'testcases', "*.yml"))
-  Dir.glob(testcases_yaml_files).each do |testcases_yaml_file_path|
-    $LOG.info "load testcases yaml file: #{testcases_yaml_file_path}".cyan
-    testcases = YAML.load_file(testcases_yaml_file_path)
-    testcases.each do |testcases_suite_name, testcases_suite_hash|
-      testcases_lib_hash[testcases_suite_name] = Hash.new
-      testcases_suite_hash.each do |testcase_name, testcase_steps_list|
-        testcases_lib_hash[testcases_suite_name][testcase_name] = Array.new
-        testcase_steps_list.each do |step|
+  features_lib_hash = Hash.new
+  features_yaml_files = File.expand_path(File.join(Dir.pwd, 'ios', 'features', "*.yml"))
+  Dir.glob(features_yaml_files).each do |features_yaml_file_path|
+    $LOG.info "load features yaml file: #{features_yaml_file_path}".cyan
+    features = YAML.load_file(features_yaml_file_path)
+    features.each do |features_suite_name, features_suite_hash|
+      features_lib_hash[features_suite_name] = Hash.new
+      features_suite_hash.each do |feature_name, feature_steps_list|
+        features_lib_hash[features_suite_name][feature_name] = Array.new
+        feature_steps_list.each do |step|
           steps_suite_name, step_name = step.split('|')
           steps_suite_name.strip!
           step_name.strip!
           step_hash = steps_lib_hash[steps_suite_name][step_name] || Hash.new
           step_hash['step_desc'] = step_name
-          testcases_lib_hash[testcases_suite_name][testcase_name] << step_hash
+          features_lib_hash[features_suite_name][feature_name] << step_hash
         end
       end
-      $LOG.debug "#{testcases_suite_name}: #{testcases_lib_hash[testcases_suite_name]}"
+      $LOG.debug "#{features_suite_name}: #{features_lib_hash[features_suite_name]}"
     end
   end
-  $LOG.debug "testcases_lib_hash: #{testcases_lib_hash}"
-  testcases_lib_hash
+  $LOG.debug "features_lib_hash: #{features_lib_hash}"
+  features_lib_hash
 end
 
-def load_scenario_yaml_file(scenario_yaml_file_path)
-  """ load yaml format scenarios file.
-  output scenario_hash format: {
-    'scenario_name': 'Login and Logout',
-    'testcases_suite': [
-      testcases_lib_hash['AccountTestcases']['login with valid account'],
-      testcases_lib_hash['AccountTestcases']['logout'],
+def load_testcase_yaml_file(testcase_yaml_file_path)
+  """ load yaml format testcase file.
+  output testcase_hash format: {
+    'testcase_name': 'Login and Logout',
+    'features_suite': [
+      features_lib_hash['AccountFeatures']['login with valid account'],
+      features_lib_hash['AccountFeatures']['logout'],
     ]
   }
   """
-  testcases_lib_hash = load_testcases_lib()
-  $LOG.info "load scenario yaml file: #{scenario_yaml_file_path}".magenta
+  $LOG.info "load testcase yaml file: #{testcase_yaml_file_path}".magenta
+  features_lib_hash = load_features_lib()
 
-  scenario_hash = Hash.new
-  YAML.load_file(scenario_yaml_file_path).each do |scenario_name, testcases_suite|
-    scenario_hash['scenario_name'] = scenario_name
-    scenario_hash['testcases_suite'] = Array.new
-    testcases_suite.each do |testcase|
-      testcases_suite_name, testcase_name = testcase.split('|')
-      testcases_suite_name.strip!
-      testcase_name.strip!
-      testcase_hash = Hash.new
-      testcase_hash['testcase_name'] = testcase_name
-      testcase_hash['testcase_steps'] = testcases_lib_hash[testcases_suite_name][testcase_name] || Array.new
-      scenario_hash['testcases_suite'] << testcase_hash
+  testcase_hash = Hash.new
+  YAML.load_file(testcase_yaml_file_path).each do |testcase_name, features_suite|
+    testcase_hash['testcase_name'] = testcase_name
+    testcase_hash['features_suite'] = Array.new
+    features_suite.each do |feature|
+      features_suite_name, feature_name = feature.split('|')
+      features_suite_name.strip!
+      feature_name.strip!
+      feature_hash = Hash.new
+      feature_hash['feature_name'] = feature_name
+      feature_hash['feature_steps'] = features_lib_hash[features_suite_name][feature_name] || Array.new
+      testcase_hash['features_suite'] << feature_hash
     end
-    $LOG.debug "#{scenario_name}: #{scenario_hash}"
+    $LOG.debug "#{testcase_name}: #{testcase_hash}"
   end
-  scenario_hash
+  testcase_hash
 end

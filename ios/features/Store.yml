@@ -1,5 +1,5 @@
 ---
-StoreTestcases:
+StoreFeatures:
   add phantom 4 to cart:
     - StoreSteps | enter Store page
     - StoreSteps | enter Phantom 4 page

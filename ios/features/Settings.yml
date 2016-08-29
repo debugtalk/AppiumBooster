@@ -1,5 +1,5 @@
 ---
-SettingsTestcases:
+SettingsFeatures:
   initialize first startup:
     - SettingsSteps | agree share location(optional)
 

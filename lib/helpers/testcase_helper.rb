@@ -3,8 +3,8 @@
 require_relative 'yaml_helper'
 require_relative 'csv_helper'
 
-def exec_testcase_step(control_id, control_action, data, step_optional=nil)
-  """ execute testcase step.
+def exec_feature_step(control_id, control_action, data, step_optional=nil)
+  """ execute feature step.
   """
   begin
     if control_id.nil? or control_id.to_s == "N/A"
@@ -36,16 +36,16 @@ def verify_step_expectation(expectation)
   inner_screen.check_elements expectation
 end
 
-def run_test_scenario(scenario_hash)
-  scenario_name = scenario_hash['scenario_name']
-  $LOG.info "======= start to run test scenario: #{scenario_name} =======".yellow
-  testcases_suite = scenario_hash['testcases_suite']
-  testcases_suite.each do |testcase|
-    $LOG.info "B------ Start to run testcase: #{testcase['testcase_name']}".blue
-    $LOG.info "testcase: #{testcase}"
+def run_testcase(testcase_hash)
+  testcase_name = testcase_hash['testcase_name']
+  $LOG.info "======= start to run test testcase: #{testcase_name} =======".yellow
+  features_suite = testcase_hash['features_suite']
+  features_suite.each do |feature|
+    $LOG.info "B------ Start to run feature: #{feature['feature_name']}".blue
+    $LOG.info "feature: #{feature}"
     step_action_desc = ""
     begin
-      testcase['testcase_steps'].each_with_index do |step, index|
+      feature['feature_steps'].each_with_index do |step, index|
         $LOG.info "step_#{index+1}: #{step['step_desc']}".cyan
         control_id = step['control_id']
         control_action = step['control_action']
@@ -61,10 +61,10 @@ def run_test_scenario(scenario_hash)
         end
 
         step_action_desc = "#{control_id}.#{control_action} #{data}"
-        exec_testcase_step(control_id, control_action, data, step_optional)
+        exec_feature_step(control_id, control_action, data, step_optional)
         $appium_driver.screenshot(step_action_desc)
 
-        # check if testcase step executed successfully
+        # check if feature step executed successfully
         if expectation
           raise unless verify_step_expectation(expectation)
         end
@@ -79,30 +79,31 @@ def run_test_scenario(scenario_hash)
       $LOG.error step_action_desc.red
       $LOG.error "#{ex}".red
     end
-    $LOG.info "E------ #{testcase['testcase_name']}\n".blue
-  end # testcases_suite
-  $LOG.info "============ all testcases have been executed. ============".yellow
+    $LOG.info "E------ #{feature['feature_name']}\n".blue
+  end # features_suite
+  $LOG.info "============ all features have been executed. ============".yellow
 end
 
-def parse_scenario_file(scenario_file)
-  if scenario_file.end_with? ".csv"
-    scenario_hash = load_scenario_csv_file(scenario_file)
-  elsif scenario_file.end_with? ".yml"
-    scenario_hash = load_scenario_yaml_file(scenario_file)
+def parse_testcase_file(testcase_file)
+  if testcase_file.end_with? ".csv"
+    testcase_hash = load_testcase_csv_file(testcase_file)
+  elsif testcase_file.end_with? ".yml"
+    testcase_hash = load_testcase_yaml_file(testcase_file)
   else
     raise "Only support yaml and csv format!"
   end
-  scenario_hash
+  testcase_hash
 end
 
-def run_all_test_scenarios(scenario_files)
-  Dir.glob(scenario_files) do |scenario_file|
-    scenario_file = File.expand_path(scenario_file)
-    scenario_hash = parse_scenario_file(scenario_file)
-    next if scenario_hash.empty? || scenario_hash['testcases_suite'].empty?
+def run_all_testcases(testcase_files)
+  Dir.glob(testcase_files) do |testcase_file|
+    testcase_file = File.expand_path(testcase_file)
+    testcase_hash = parse_testcase_file(testcase_file)
+    $LOG.info "testcase_hash: #{testcase_hash}"
+    next if testcase_hash.empty? || testcase_hash['features_suite'].empty?
     $appium_driver.start_driver
     # $appium_driver.alert_accept
-    run_test_scenario(scenario_hash)
+    run_testcase(testcase_hash)
     $appium_driver.driver_quit
   end
 end

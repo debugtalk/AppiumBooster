@@ -1,5 +1,5 @@
 ---
-AccountTestcases:
+AccountFeatures:
   login with valid test account:
     - AccountSteps | enter My Account page
     - AccountSteps | enter Login page

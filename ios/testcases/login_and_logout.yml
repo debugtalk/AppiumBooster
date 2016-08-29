@@ -1,0 +1,5 @@
+---
+Login and Logout:
+  - SettingsFeatures | initialize first startup
+  - AccountFeatures | login with valid production account
+  - AccountFeatures | logout

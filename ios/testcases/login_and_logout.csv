@@ -1,4 +1,4 @@
-testcase_name,step_desc,control_id,control_action,data,expectation,optional
+feature_name,step_desc,control_id,control_action,data,expectation,optional
 initialize first startup,agree share location(optional),btnAgreeShareLocation,click,,,true
 ,,,,,,
 login with valid production account,enter My Account page,btnMenuMyAccount,click,,tablecellMyAccountSystemSettings,

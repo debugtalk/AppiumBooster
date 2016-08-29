@@ -1,0 +1,11 @@
+---
+SmokeTest:
+  - SettingsFeatures | initialize first startup
+  - SettingsFeatures | Change Country to China
+  - AccountFeatures | login with valid account
+  - AccountFeatures | Change Shipping Address to China
+  - StoreFeatures | add phantom 4 to cart
+  - StoreFeatures | finish order
+  - NearbyFeatures | check Nearby module
+  - ForumFeatures | check Forum module
+  - AccountFeatures | logout

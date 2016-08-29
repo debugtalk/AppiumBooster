@@ -1,5 +1,0 @@
----
-Login and Logout:
-  - SettingsTestcases | initialize first startup
-  - AccountTestcases | login with valid production account
-  - AccountTestcases | logout
