@@ -1,0 +1,6 @@
+---
+Send text messages:
+  - SettingsFeatures | initialize first startup
+  - AccountFeatures | login with valid test account
+  - MessageFeatures | enter follower zeng1 message page
+  - MessageFeatures | send text message | 10

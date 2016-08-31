@@ -111,13 +111,17 @@ def load_testcase_yaml_file(testcase_yaml_file_path)
     testcase_hash['testcase_name'] = testcase_name
     testcase_hash['features_suite'] = Array.new
     features_suite.each do |feature|
-      features_suite_name, feature_name = feature.split('|')
+      features_suite_name, feature_name, run_times = feature.strip.split('|')
       features_suite_name.strip!
       feature_name.strip!
-      feature_hash = Hash.new
-      feature_hash['feature_name'] = feature_name
-      feature_hash['feature_steps'] = features_lib_hash[features_suite_name][feature_name] || Array.new
-      testcase_hash['features_suite'] << feature_hash
+      run_times ||= "1"
+      run_times = run_times.strip.to_i
+      run_times.times.each do |t|
+        feature_hash = Hash.new
+        feature_hash['feature_name'] = feature_name
+        feature_hash['feature_steps'] = features_lib_hash[features_suite_name][feature_name] || Array.new
+        testcase_hash['features_suite'] << feature_hash
+      end
     end
     $LOG.debug "#{testcase_name}: #{testcase_hash}"
   end

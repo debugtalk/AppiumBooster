@@ -81,3 +81,18 @@ AccountSteps:
     control_action: click
     expectation: !btnViewMyCoupons
     optional: true
+
+  enter Follower page:
+    control_id: txtFollow
+    control_action: click
+    expectation: Follower
+
+   enter zeng1 page from Follower page:
+     control_id: zeng1
+     control_action: click
+     expectation: btnMessage
+
+   enter Message page from Pilot information page:
+     control_id: btnMessage
+     control_action: click
+     expectation: btnEmoji

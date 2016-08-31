@@ -1,0 +1,21 @@
+---
+MessageFeatures:
+  enter follower zeng1 message page:
+    - AccountSteps | enter Follower page
+    - AccountSteps | enter zeng1 page from Follower page
+    - AccountSteps | enter Message page from Pilot information page
+
+  popup emoji image board:
+    - MessageSteps | popup emoji image board
+
+  send emoji image 😎:
+    - MessageSteps | select 😎
+    - MessageSteps | send message
+
+  send emoji image 😲:
+    - MessageSteps | select 😲
+    - MessageSteps | send message
+
+  send emoji image 😍:
+    - MessageSteps | select 😍
+    - MessageSteps | send message

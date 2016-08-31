@@ -1,0 +1,32 @@
+---
+MessageSteps:
+  popup emoji image board:
+    control_id: btnEmoji
+    control_action: click
+    expectation: btnEmojiSend
+
+  input text message:
+    control_id: txtfieldMessageInput
+    control_action: type
+    data: This is a message sent by robot ${Time.now.to_i}
+
+  select 😎:
+    control_id: 😎
+    control_action: click
+
+  select 😲:
+    control_id: 😲
+    control_action: click
+
+  select 😍:
+    control_id: 😍
+    control_action: click
+
+  send emoji message:
+    control_id: btnEmojiSend
+    control_action: click
+
+  send message:
+    control_id: txtfieldMessageInput
+    control_action: send_keys
+    data: '\n'
