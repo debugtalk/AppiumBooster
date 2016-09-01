@@ -8,14 +8,15 @@ MessageFeatures:
   popup emoji image board:
     - MessageSteps | popup emoji image board
 
-  send emoji image 😎:
+  input emoji image 😎:
     - MessageSteps | select 😎
-    - MessageSteps | send message
 
-  send emoji image 😲:
+  input emoji image 😲:
     - MessageSteps | select 😲
-    - MessageSteps | send message
 
-  send emoji image 😍:
+  input emoji image 😍:
     - MessageSteps | select 😍
+
+  send text message:
+    - MessageSteps | input text message
     - MessageSteps | send message

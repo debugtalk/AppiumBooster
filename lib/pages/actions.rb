@@ -3,6 +3,10 @@
 module Pages
   module Actions
 
+    def send_keys(text)
+      wait { @found_element.send_keys text }
+    end
+
     def _type(text)
       wait { @found_element.type text }
     end
