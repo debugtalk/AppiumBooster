@@ -1,0 +1,8 @@
+---
+TestEnvAccount:
+  UserName: test@debugtalk.com
+  Password: 123456
+
+ProductionEnvAccount:
+  UserName: production@debugtalk.com
+  Password: 12345678

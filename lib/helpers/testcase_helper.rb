@@ -1,5 +1,6 @@
 # filename: lib/helpers/testcase_helper.rb
 
+require_relative 'utils'
 require_relative 'yaml_helper'
 require_relative 'csv_helper'
 
@@ -49,16 +50,9 @@ def run_testcase(testcase_hash)
         $LOG.info "step_#{index+1}: #{step['step_desc']}".cyan
         control_id = step['control_id']
         control_action = step['control_action']
-        data = step['data']
+        data = eval_expression(step['data'])
         expectation = step['expectation']
         step_optional = step['optional']
-
-        # add support for passing ruby expression as data parameter
-        if data && data.class == String
-          data.gsub!(/\$\{(.*?)\}/) do
-            eval($1)
-          end
-        end
 
         step_action_desc = "#{control_id}.#{control_action} #{data}"
         exec_feature_step(control_id, control_action, data, step_optional)

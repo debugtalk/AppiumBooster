@@ -13,25 +13,25 @@ AccountSteps:
   input test EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com
+    data: ${config.TestEnvAccount.UserName}
     expectation: sectxtfieldPassword
 
   input test Password:
     control_id: sectxtfieldPassword
     control_action: type
-    data: 12345678
+    data: ${config.TestEnvAccount.Password}
     expectation: btnLogin
 
   input production EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com
+    data: ${config.ProductionEnvAccount.UserName}
     expectation: sectxtfieldPassword
 
   input production Password:
     control_id: sectxtfieldPassword
     control_action: type
-    data: 123456
+    data: ${config.ProductionEnvAccount.Password}
     expectation: btnLogin
 
   login:
@@ -87,12 +87,12 @@ AccountSteps:
     control_action: click
     expectation: Follower
 
-   enter zeng1 page from Follower page:
-     control_id: zeng1
-     control_action: click
-     expectation: btnMessage
+  enter zeng1 page from Follower page:
+    control_id: zeng1
+    control_action: click
+    expectation: btnMessage
 
-   enter Message page from Pilot information page:
-     control_id: btnMessage
-     control_action: click
-     expectation: btnEmoji
+  enter Message page from Pilot information page:
+    control_id: btnMessage
+    control_action: click
+    expectation: btnEmoji

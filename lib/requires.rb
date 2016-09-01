@@ -1,5 +1,8 @@
 # filename: lib/requires.rb
 
+# require config helper
+require_relative 'helpers/config_helper.rb'
+
 # require the ios page checker
 require_relative 'pages/inner_screen'
 
