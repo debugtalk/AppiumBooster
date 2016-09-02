@@ -1,6 +1,7 @@
 ---
 MessageFeatures:
   enter follower zeng1 message page:
+    - AccountSteps | enter My Account page
     - AccountSteps | enter Follower page
     - AccountSteps | enter zeng1 page from Follower page
     - AccountSteps | enter Message page from Pilot information page
@@ -20,3 +21,9 @@ MessageFeatures:
   send text message:
     - MessageSteps | input text message
     - MessageSteps | send message
+
+  enter group message page:
+    - AccountSteps | enter My Account page
+    - MessageSteps | enter My Favorite page
+    - MessageSteps | enter Testhahahahah detail page
+    - MessageSteps | enter group chat

@@ -1,0 +1,6 @@
+---
+Send text messages in group:
+  - SettingsFeatures | initialize first startup
+  - AccountFeatures | login with valid test account
+  - MessageFeatures | enter group message page
+  - MessageFeatures | send text message | 100

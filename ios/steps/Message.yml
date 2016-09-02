@@ -30,3 +30,18 @@ MessageSteps:
     control_id: txtfieldMessageInput
     control_action: send_keys
     data: '\n'
+
+  enter My Favorite page:
+    control_id: tablecellMyFavorite
+    control_action: click
+    expectation: Testhahahahah
+
+  enter Testhahahahah detail page:
+    control_id: Testhahahahah
+    control_action: click
+    expectation: Chat
+
+  enter group chat:
+    control_id: Chat
+    control_action: click
+    expectation: btnEmoji
