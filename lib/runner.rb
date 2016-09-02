@@ -1,4 +1,5 @@
 # filename: lib/runner.rb
+require "pathname"
 
 def run_test(options)
   app_path = options[:app_path]
@@ -24,9 +25,17 @@ def run_test(options)
       $appium_driver.init_client_instance(capability)
 
       if File.exists? testcase_file
+        # e.g. /Users/Leo/MyProjects/AppiumBooster/ios/testcases/login.yml
         testcase_files = testcase_file
+      elsif Pathname.new(testcase_file).absolute?
+        # e.g. /Users/Leo/MyProjects/AppiumBooster/ios/testcases/*.yml
+        testcase_files = testcase_file
+      elsif testcase_file.include? File::SEPARATOR
+        # e.g. ios/testcases/*.yml
+        testcase_files = File.join(Dir.pwd, "#{testcase_file}")
       else
-        testcases_dir = File.join(File.dirname(__FILE__), app_type, 'testcases')
+        # e.g. *.yml
+        testcases_dir = File.join(Dir.pwd, app_type, 'testcases')
         testcase_files = File.join(testcases_dir, "#{testcase_file}")
       end
       run_all_testcases(testcase_files)

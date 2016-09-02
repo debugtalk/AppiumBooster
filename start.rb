@@ -22,7 +22,7 @@ OptionParser.new do |opts|
   end
 
   options[:testcase_file] = "*.yml"
-  opts.on("-f <value>", "--testcase_file", "Specify testcase file") do |file|
+  opts.on("-f <value>", "--testcase_file", "Specify testcase file(s)") do |file|
     file.downcase!
     file = "*.yml" if file == "*.yaml"
     options[:testcase_file] = file
