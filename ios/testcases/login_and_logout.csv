@@ -3,8 +3,8 @@ initialize first startup,agree share location(optional),btnAgreeShareLocation,cl
 ,,,,,,
 login with valid production account,enter My Account page,btnMenuMyAccount,click,,tablecellMyAccountSystemSettings,
 ,enter Login page,tablecellMyAccountLogin,click,,btnForgetPassword,
-,input production EmailAddress,txtfieldEmailAddress,type,leo.lee@debugtalk.com,sectxtfieldPassword,
-,input production Password,sectxtfieldPassword,type,123321,btnLogin,
+,input production EmailAddress,txtfieldEmailAddress,type,${config.ProductionEnvAccount.UserName},sectxtfieldPassword,
+,input production Password,sectxtfieldPassword,type,${config.ProductionEnvAccount.Password},btnLogin,
 ,login,btnLogin,click,,tablecellMyMessage,
 ,close coupon popup window(optional),btnClose,click,,,true
 ,,,,,,

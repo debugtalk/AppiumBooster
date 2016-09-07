@@ -11,14 +11,31 @@ Take DJI+ Discover's login and logout function as an example.
 In order to test these functions above, you can write testcases in yaml format like this.
 
 ```yaml
-# ios/testcases/Account.yml
+# ios/testcases/login_and_logout.yml
 ---
-AccountTestcases:
-  login with valid account:
+Login and Logout:
+  - SettingsFeatures | initialize first startup
+  - AccountFeatures | login with valid test account
+  - AccountFeatures | logout
+```
+
+In the testcases, each step is combined with two parts, joined by a separator `|`. The former part indicates essential features defined in `ios/features/` directory, and the latter part indicates feature name, which is defined in feature yaml files like below.
+
+```yaml
+# ios/features/Settings.yml
+---
+SettingsFeatures:
+  initialize first startup:
+    - SettingsSteps | agree share location(optional)
+
+# ios/features/Account.yml
+---
+AccountFeatures:
+  login with valid test account:
     - AccountSteps | enter My Account page
     - AccountSteps | enter Login page
-    - AccountSteps | input EmailAddress
-    - AccountSteps | input Password
+    - AccountSteps | input test EmailAddress
+    - AccountSteps | input test Password
     - AccountSteps | login
     - AccountSteps | close coupon popup window(optional)
 
@@ -28,7 +45,7 @@ AccountTestcases:
     - AccountSteps | logout
 ```
 
-In the testcases, each step is combined with two parts, joined by a separator `|`. The former part indicates step file located in `ios/steps/` directory, and the latter part indicates testcase step name, which is defined in steps yaml files like below.
+Likewise, each step of essential features is combined with two parts, joined by a separator `|`. The former part indicates step file located in `ios/steps/` directory, and the latter part indicates feature step name, which is defined in steps yaml files like below.
 
 ```yaml
 # ios/steps/AccountSteps.yml
@@ -44,16 +61,16 @@ AccountSteps:
     control_action: click
     expectation: btnForgetPassword
 
-  input EmailAddress:
+  input test EmailAddress:
     control_id: txtfieldEmailAddress
     control_action: type
-    data: leo.lee@debugtalk.com
+    data: ${config.TestEnvAccount.UserName}
     expectation: sectxtfieldPassword
 
-  input Password:
+  input test Password:
     control_id: sectxtfieldPassword
     control_action: type
-    data: 123456
+    data: ${config.TestEnvAccount.Password}
     expectation: btnLogin
 
   login:
@@ -68,7 +85,7 @@ You can also write testcases in any table tools, including MS Excel and iWork Nu
 
 In order to test the same functions above, you can write testcases in tables like this.
 
-![](examples/testcase_login_and_logout.png)
+![](examples/testcase_login_and_logout.jpg)
 
 After the testcases are finished, export to CSV format, and put the csv files under `ios/testcases/` directory.
 
@@ -79,49 +96,36 @@ Once the testcases are done, you are ready to run automation test on your app.
 Run the automation testcases is very easy. You can execute `ruby start.rb -h` in the project root directory to see the usage.
 
 ```
-➜  AppiumBooster git:(master) ✗ ruby start.rb -h
+$ ruby start.rb -h
 Usage: start.rb [options]
     -p, --app_path <value>           Specify app path
     -t, --app_type <value>           Specify app type, ios or android
-    -f, --testcase_file <value>      Specify testcase file
+    -f, --testcase_file <value>      Specify testcase file(s)
+    -d, --output_folder <value>      Specify output folder
+    -c, --convert_type <value>       Specify testcase converter, yaml2csv or csv2yaml
         --disable_output_color       Disable output color
 ```
 
-AppiumBooster will load all the csv test suites and then excute each suite sequentially.
+And here are some examples.
 
+```bash
+$ cd ${AppiumBooster}
+# execute specified testcase with absolute testcase file path
+$ ruby run.rb -p "ios/app/test.zip" -f "/Users/Leo/MyProjects/AppiumBooster/ios/testcases/login.yml"
+
+# execute specified testcase with relative testcase file path
+$ ruby run.rb -p "ios/app/test.zip" -f "ios/testcases/login.yml"
+
+# execute all yaml format testcases
+$ ruby run.rb -p "ios/app/test.zip" -f "ios/testcases/*.yml"
+
+# execute all csv format testcases located in ios folder
+$ ruby run.rb -p "ios/app/test.zip" -t "ios" -f "*.csv"
+
+# convert yaml format testcase to csv format testcase
+$ ruby start.rb -c "yaml2csv" -f ios/testcases/login_and_logout.yml
 ```
-➜  AppiumBooster git:(master) ✗ ruby start.rb -p "ios/app/test.zip" -f "ios/testcases/Account.yml"
-initialize appium driver ...
-load testcase yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml
-load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/AccountSteps.yml
-load steps yaml file: /Users/Leo/MyProjects/AppiumBooster/ios/steps/SettingsSteps.yml
-start appium client driver ...
 
-======= start to run testcase suite: /Users/Leo/MyProjects/AppiumBooster/ios/testcases/Account.yml =======
-B------ Start to run testcase: login with valid account
-step_1: enter My Account page
-btnMenuMyAccount.click     ...    ✓
-step_2: enter Login page
-tablecellMyAccountLogin.click     ...    ✓
-step_3: input EmailAddress
-txtfieldEmailAddress.type leo.lee@debugtalk.com    ...    ✓
-step_4: input Password
-sectxtfieldPassword.type 123456    ...    ✓
-step_5: login
-btnLogin.click     ...    ✓
-step_6: close coupon popup window(optional)
-btnClose.click     ...    ✓
-E------ login with valid account
+## Read more ...
 
-B------ Start to run testcase: logout
-step_1: enter My Account page
-btnMenuMyAccount.click     ...    ✓
-step_2: enter Settings page
-tablecellMyAccountSystemSettings.click     ...    ✓
-step_3: logout
-btnLogout.click     ...    ✓
-E------ logout
-
-============ all testcases have been executed. ============
-quit appium client driver.
-```
+[《打造心目中理想的自动化测试框架（AppiumBooster）》](http://debugtalk.com/post/build-ideal-app-automation-test-framework/)
