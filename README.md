@@ -4,7 +4,7 @@ AppiumBooster helps you to write automation testcases in yaml format or csv tabl
 
 ## write testcases in yaml (recommended)
 
-Take DJI+ Discover's login and logout function as an example.
+Take DebugTalk+ Discover's login and logout function as an example.
 
 ![](examples/preview_login_and_logout.png)
 
